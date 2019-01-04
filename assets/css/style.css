@@ -8,12 +8,24 @@ header{
     width: 100%;
     top: 0;
     display: inline-grid;
-    grid-template-columns: auto auto auto auto auto;
+    grid-template-columns: 40% auto;
     border: 1px solid blue;
 }
 .casey{
     font-family: android;
     font-size: 65px;
+    padding: 0;
+    margin: 0 50px 0 0 ;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.links{
+    display: inline-grid;
+    grid-template-columns: auto auto auto auto;
+    justify-items: center;
 }
 .nav-img{
     width: 100%;
@@ -24,7 +36,9 @@ header{
 	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
 }
 .nav-link{
-    display:​ table;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     max-width: 150px;   
     width: 100%;
@@ -77,4 +91,17 @@ header{
 .active{
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
     filter: grayscale(100%);
+}
+
+
+
+@media screen and (max-width: 1000px) {
+    header{
+        grid-template-columns: 30% auto;
+    }
+}
+@media screen and (max-width: 860px){
+    header{
+        grid-template-columns: auto;
+    }
 }
