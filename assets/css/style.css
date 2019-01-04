@@ -13,6 +13,8 @@ header{
 }
 .casey{
     font-family: android;
+    color: black;
+    text-decoration: none;
     font-size: 65px;
     padding: 0;
     margin: 0 50px 0 0 ;
@@ -21,6 +23,15 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: transform .25s ease-in-out;
+
+}
+.title-link{
+    text-decoration: none;
+    color: black
+}
+.casey:hover{
+    transform: scale(1.1);
 }
 .links{
     display: inline-grid;
@@ -30,10 +41,7 @@ header{
 .nav-img{
     width: 100%;
     height: auto;
-    border-radius: 100%;
-    transition-property: all;
-	transition-duration: .5s;
-	transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    transition: border-radius .5s cubic-bezier(0, 1, 0.5, 1);
 }
 .nav-link{
     display: flex;
@@ -56,7 +64,7 @@ header{
     position: absolute;
     z-index: 2;
     height: 0px;
-    bottom: -20px;
+    bottom: 0px;
     text-align: center;
     font-size: 25px;
     line-height: 1;
@@ -65,20 +73,28 @@ header{
 .solid{
     position: absolute;
     bottom: 0;
-    height: 0;
     width: 100%;
     z-index: 1;
     transition: height .5s .2s cubic-bezier(0, 1, 0.5, 1);
-    background-color: lime;
+    background-color: white;
 }
 .solid-hover{
     height: 150px;
 }
+.solid-off{
+    height: 0;
+}
 .img-hover{
     border-radius: 0;
 }
-.hover{
-    height: 107px;
+.img-off{
+    border-radius: 100%;
+}
+.text-hover{
+    height: 87px;
+}
+.text-off{
+    height: 0;
 }
 .spacer{
     width: 100%;
