@@ -7,9 +7,9 @@ html, body{
     padding: 0;
     display: grid;
     grid-template-areas: 
-    'a a a'
-    'b c d'
-    'e e e';
+    'a a a a a a'
+    'b b c c d d'
+    'e e e f f f';
 }
 .circle{
     border-radius: 100%;
@@ -46,8 +46,17 @@ img{
     grid-area: d;
 }
 .pco{
+    position: relative;
     grid-area: e;
-    margin: auto;
+    margin-right: 0;
+}
+.right{
+    position: absolute;
+    right: 0;
+}
+.art{
+    grid-area: f;
+    margin-left: 0;
 }
 .flickr{
     position: absolute;
