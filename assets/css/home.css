@@ -1,0 +1,57 @@
+html, body{
+    height: 100%;
+    display: grid;
+}
+.container{
+    margin: auto;
+    padding: 0;
+    display: grid;
+    grid-template-areas: 
+    'a a a'
+    'b c d'
+    'e e e';
+}
+.circle{
+    border-radius: 100%;
+}
+img{
+    max-width: 300px;
+    height: auto;
+}
+.abt{
+    grid-area: a;
+    margin: auto;
+}
+.med{
+    grid-area: b;
+}
+.nme{
+    position: relative;
+    grid-area: c;
+    line-height: 1.5;
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    text-align: center;
+}
+.kc{
+    font-family: android;
+    font-size: 65px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.lgo{
+    grid-area: d;
+}
+.pco{
+    grid-area: e;
+    margin: auto;
+}
+.flickr{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 35%;
+}
