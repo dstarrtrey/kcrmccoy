@@ -72,3 +72,15 @@ img{
     left: 0;
     width: 35%;
 }
+.insta{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 35%;
+}
+.linked{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 35%;
+}
