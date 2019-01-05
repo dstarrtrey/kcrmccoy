@@ -2,6 +2,10 @@
     font-family: android;
     src: url(../fonts/Android\ 101.ttf);
 }
+@font-face{
+    font-family: future;
+    src: url(../fonts/FUTRFW.TTF);
+}
 header{
     position: relative;
     margin: auto;
