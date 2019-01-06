@@ -121,8 +121,8 @@ footer{
     transition: all .25s linear;
 }
 .footer-links img:hover{
-    -webkit-filter: grayscale(30%); /* Safari 6.0 - 9.0 */
-    filter: grayscale(30%);
+    -webkit-filter: grayscale(40%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(40%);
 }
 @media screen and (max-width: 1000px) {
     header{
