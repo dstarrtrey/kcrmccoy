@@ -8,10 +8,11 @@ html, body{
     grid-template-areas: 
     'a a a a a a'
     'b b c c d d'
-    'e e e f f f';
+    '. e e f f .';
 }
 .circle{
     border-radius: 100%;
+    transition: filter .25s linear;
 }
 img{
     max-width: 300px;
@@ -25,7 +26,6 @@ img{
     grid-area: b;
 }
 .nme{
-    position: relative;
     grid-area: c;
     line-height: 1.2;
     width: 300px;
@@ -47,17 +47,18 @@ img{
     grid-area: d;
 }
 .pco{
-    position: relative;
     grid-area: e;
     margin-right: 0;
-}
-.right{
-    position: absolute;
-    right: 0;
 }
 .art{
     grid-area: f;
     margin-left: 0;
+}
+.y{
+    grid-area: y;
+}
+.z{
+    grid-area: z;
 }
 .flickr{
     position: absolute;
@@ -82,4 +83,32 @@ img{
     bottom: 0;
     right: 0;
     width: 35%;
+}
+.link{
+    position: relative;
+    border-radius: 100%;
+    padding: 0;
+}
+.link-label{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 100%;
+    width: 100%;
+    line-height: 300px;
+    text-align: center;
+    opacity: 0;
+    color: white;
+    text-shadow: 1px 1px black;
+    font-size: 25px;
+    z-index: 3;
+    transition: opacity .25s ease-in-out;
+}
+.link-label:hover{
+    opacity: 1;
+}
+.link-label:hover ~ .circle {
+    filter: blur(1.5px);
+    -webkit-filter: blur(1.5px);
 }

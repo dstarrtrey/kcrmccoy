@@ -114,6 +114,8 @@ header{
 }
 footer{
     text-align: center;
+    position: relative;
+    padding-top: 20px;
 }
 .footer-links img{
     width: 50px;
@@ -121,8 +123,34 @@ footer{
     transition: all .25s linear;
 }
 .footer-links img:hover{
-    -webkit-filter: grayscale(40%); /* Safari 6.0 - 9.0 */
-    filter: grayscale(40%);
+    -webkit-filter: grayscale(50%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(50%);
+}
+.footer-links a{
+    font-size: 0;
+}
+.footer-links a:hover{
+    font-size: 20px;
+}
+.footer-links span{
+    position: absolute;
+    top: 0;
+    right: 50%;
+    transform: translateX(50%);
+    transition: font-size .05s linear;
+    color: black;
+}
+.flickr:hover{
+    font-size: 20px;
+}
+.instagram:hover{
+    font-size: 20px;
+}
+.youtube:hover{
+    font-size: 20px;
+}
+.linkedin:hover{
+    font-size: 20px;
 }
 @media screen and (max-width: 1000px) {
     header{
