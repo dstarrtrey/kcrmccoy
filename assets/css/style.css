@@ -6,14 +6,22 @@
     font-family: future;
     src: url(../fonts/FUTRFW.TTF);
 }
+html{
+    height: 100%;
+}
+body{
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
 header{
     position: relative;
-    margin: auto;
+    margin: 0 auto;
     width: 100%;
-    top: 0;
     display: inline-grid;
     grid-template-columns: 40% auto;
     border: 1px solid blue;
+    box-sizing: border-box;
 }
 .casey{
     font-family: android;
@@ -99,14 +107,6 @@ header{
 }
 .text-off{
     height: 0;
-}
-.spacer{
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    height: 20px;
-    border: 2px solid red;
-    z-index: 3;
 }
 .active{
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
