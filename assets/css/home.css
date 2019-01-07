@@ -63,29 +63,28 @@ img{
 .z{
     grid-area: z;
 }
+.sm-link{
+    width: 105px;
+}
 .flickr{
     position: absolute;
     top: 0;
     left: 0;
-    width: 35%;
 }
 .youtube{
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 35%;
 }
 .insta{
     position: absolute;
     top: 0;
     right: 0;
-    width: 35%;
 }
 .linked{
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 35%;
 }
 .link{
     position: relative;
@@ -125,4 +124,44 @@ footer:before{
 }
 .sm-link:hover{
     filter: invert(20%)
+}
+@media screen and (max-width: 900px){
+    .container{
+        grid-template-areas: 
+            'c c'
+            'a b'
+            'd e'
+            'f f';
+    }
+    .art{
+        margin: auto;
+    }
+    .nme{
+        width: 100%
+    }
+    .link-label{
+        opacity: 1;
+    }
+}
+@media screen and (max-width: 620px){
+    .container{
+        grid-template-areas:
+            'c'
+            'a' 
+            'b'
+            'd'
+            'e'
+            'f';  
+    }
+    .link{
+        width: 100%;
+        height: auto;
+    }
+    .circle{
+        width: 100%;
+    }
+    .nme{
+        height: 300px;
+    }
+
 }

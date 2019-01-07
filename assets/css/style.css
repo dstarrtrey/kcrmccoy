@@ -24,7 +24,6 @@ header{
     width: 100%;
     display: inline-grid;
     grid-template-columns: 40% auto;
-    border: 1px solid blue;
     box-sizing: border-box;
 }
 .casey{
@@ -125,6 +124,10 @@ h2{
     -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
     filter: grayscale(100%);
 }
+.content{
+    max-width: 1200px;
+    margin: auto;
+}
 footer:before {
     content: ""; 
     display: block; 
@@ -170,5 +173,8 @@ footer{
 @media screen and (max-width: 860px){
     header{
         grid-template-columns: auto;
+    }
+    h2{
+        text-align: center;
     }
 }
