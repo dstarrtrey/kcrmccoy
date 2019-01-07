@@ -1,10 +1,3 @@
-main{
-    display: grid;
-    margin: auto 5%;
-}
-.container{
-    margin-top: 25px;
-}
 .biopic{
     width: 25%;
     margin: 0 25px 15px 0;
@@ -12,14 +5,6 @@ main{
     height: auto;
     border: 3px double black;
 }
-p{
-    font-size: 20px;
-    line-height: 1.5;
-    padding-bottom: 1rem;
-}
-
-
-
 @media screen and (max-width: 860px){
     .biopic{
         width: 50%

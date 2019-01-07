@@ -18,6 +18,11 @@ body{
     display: grid;
     grid-template-rows: auto 1fr auto;
 }
+main{
+    position: relative;
+    display: grid;
+    margin: auto 5%;
+}
 header{
     position: relative;
     margin: 0 auto;
@@ -25,6 +30,11 @@ header{
     display: inline-grid;
     grid-template-columns: 40% auto;
     box-sizing: border-box;
+}
+p{
+    font-size: 20px;
+    line-height: 1.5;
+    padding-bottom: 1rem;
 }
 .casey{
     font-family: future;
@@ -48,6 +58,7 @@ h2{
     font-size: 45px;
     text-decoration: underline;
     text-underline-position: under;
+    margin-bottom: 25px;
 }
 .title-link{
     text-decoration: none;
