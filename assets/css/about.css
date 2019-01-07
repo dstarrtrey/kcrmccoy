@@ -1,0 +1,40 @@
+main{
+    display: grid;
+    
+    margin: auto 5%;
+}
+.container{
+    margin-top: 25px;
+}
+.biopic{
+    width: 25%;
+    margin-right: 25px;
+    float: left;
+    height: auto;
+}
+.bio{
+    padding-left: 25px;
+}
+p{
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+
+
+@media screen and (max-width: 860px){
+    .biopic{
+        width: 50%
+    }
+    h2{
+        text-align: center;
+    }
+}
+@media screen and (max-width: 500px){
+    .biopic{
+        width: 100%;
+    }
+    main{
+        margin: auto 0;
+    }
+}

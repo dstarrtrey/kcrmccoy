@@ -105,7 +105,8 @@ img{
     opacity: 0;
     color: white;
     text-shadow: 1px 1px black;
-    font-size: 25px;
+    font-family: vinegar;
+    font-size: 40px;
     z-index: 3;
     transition: opacity .25s ease-in-out;
 }

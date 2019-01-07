@@ -28,11 +28,12 @@ header{
     box-sizing: border-box;
 }
 .casey{
-    font-family: vinegar;
+    font-family: future;
+    font-size: 60px;
     font-weight: bold;
+    letter-spacing: -13px;
     color: black;
     text-decoration: none;
-    font-size: 65px;
     padding: 0;
     margin: 0 50px 0 0 ;
     width: 100%;
@@ -43,12 +44,19 @@ header{
     transition: transform .25s ease-in-out;
 
 }
+h2{
+    font-family: vinegar;
+    font-weight: bold;
+    font-size: 45px;
+    text-decoration: underline;
+    text-underline-position: under;
+}
 .title-link{
     text-decoration: none;
     color: black
 }
 .casey:hover{
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 .links{
     display: inline-grid;
@@ -78,7 +86,7 @@ header{
     display: table-cell;
     vertical-align: bottom;
     text-align: center;
-    width: 150px;
+    width: 100%;
     position: absolute;
     z-index: 2;
     height: 0px;
