@@ -1,6 +1,9 @@
 html, body{
     height: 100%;
 }
+body{
+    grid-template-rows: auto auto;
+}
 .container{
     margin: auto;
     padding: 0;
@@ -113,7 +116,12 @@ img{
     filter: blur(1.5px);
     -webkit-filter: blur(1.5px);
 }
-
+footer{
+    font-size: 12px;
+}
+footer:before{
+    border: none;
+}
 .sm-link:hover{
     filter: invert(20%)
 }
