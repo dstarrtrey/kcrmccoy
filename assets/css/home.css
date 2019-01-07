@@ -88,6 +88,7 @@ img{
     position: relative;
     border-radius: 100%;
     padding: 0;
+    height: 300px;
 }
 .link-label{
     position: absolute;
@@ -111,4 +112,8 @@ img{
 .link-label:hover ~ .circle {
     filter: blur(1.5px);
     -webkit-filter: blur(1.5px);
+}
+
+.sm-link:hover{
+    filter: invert(20%)
 }
