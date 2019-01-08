@@ -103,7 +103,7 @@ img{
     text-align: center;
     opacity: 0;
     color: white;
-    text-shadow: 1px 1px black;
+    text-shadow: 2px 2px 3px black;
     font-family: vinegar;
     font-size: 40px;
     z-index: 3;
