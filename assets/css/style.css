@@ -1,6 +1,6 @@
 @font-face{
-    font-family: android;
-    src: url(../fonts/Android\ 101.ttf);
+    font-family: geosanslight;
+    src: url(../fonts/GeosansLight.ttf);
 }
 @font-face{
     font-family: future;
@@ -32,9 +32,10 @@ header{
     box-sizing: border-box;
 }
 p{
-    font-size: 20px;
+    font-size: 25px;
     line-height: 1.5;
     padding-bottom: 1rem;
+    font-family: geosanslight;
 }
 .casey{
     font-family: future;
@@ -54,7 +55,6 @@ p{
 }
 h2{
     font-family: vinegar;
-    font-weight: bold;
     font-size: 45px;
     text-decoration: underline;
     text-underline-position: under;
@@ -149,6 +149,7 @@ footer:before {
 footer{
     text-align: center;
     position: relative;
+    margin-top: 25px;
 }
 .footer-links img{
     width: 50px;

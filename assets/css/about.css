@@ -4,6 +4,7 @@
     float: left;
     height: auto;
     border: 3px double black;
+    box-sizing: border-box;
 }
 @media screen and (max-width: 860px){
     .biopic{

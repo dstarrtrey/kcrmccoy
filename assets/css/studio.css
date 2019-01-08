@@ -2,6 +2,8 @@
     max-width: 350px;
     float: left;
     margin: 0 25px 15px 0;
+    border: 3px double black;
+    box-sizing: border-box;
 }
 .youtube-embeds{
     clear: both;
