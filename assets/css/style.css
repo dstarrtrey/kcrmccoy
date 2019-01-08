@@ -36,6 +36,7 @@ p{
     line-height: 1.5;
     padding-bottom: 1rem;
     font-family: geosanslight;
+    text-align: left;
 }
 .casey{
     font-family: future;
@@ -54,12 +55,12 @@ p{
 
 }
 h2{
-    margin-top: 15px;
+    margin: 15px 0 25px 0;
     font-family: vinegar;
     font-size: 45px;
     text-decoration: underline overline;
     text-underline-position: under;
-    margin-bottom: 25px;
+    line-height: 1;
 }
 .title-link{
     text-decoration: none;
@@ -193,6 +194,11 @@ footer{
         grid-template-columns: auto;
     }
     h2{
+        text-align: center;
+    }
+}
+@media screen and (max-width: 500px){
+    p{
         text-align: center;
     }
 }
