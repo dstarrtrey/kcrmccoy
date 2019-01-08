@@ -21,7 +21,7 @@ body{
 main{
     position: relative;
     display: grid;
-    margin: auto 10%;
+    margin: 0 10%;
 }
 header{
     position: relative;
@@ -177,13 +177,15 @@ footer{
 }
 .bottom{
     font-size: 12px;
+    position: relative;
+    bottom: 1px;
 }
 @media screen and (max-width: 1000px) {
     header{
         grid-template-columns: 30% auto;
     }
     main{
-        margin: auto 5%;
+        margin: 0 5%;
     }
 }
 @media screen and (max-width: 860px){

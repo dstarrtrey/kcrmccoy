@@ -146,19 +146,24 @@ footer:before{
 @media screen and (max-width: 620px){
     .container{
         grid-template-areas:
-            'c'
-            'a' 
-            'b'
-            'd'
-            'e'
-            'f';  
+            'c c'
+            'a b' 
+            'c d'
+            'e f';  
     }
     .link{
         width: 100%;
         height: auto;
     }
+    .art{
+        text-align: center;
+    }
     .circle{
-        width: 100%;
+        width: 150px;
+    }
+    .link-label{
+        line-height: 150px;
+        font-size: 20px;
     }
     .nme{
         height: 300px;
