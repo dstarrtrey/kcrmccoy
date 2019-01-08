@@ -21,7 +21,7 @@ body{
 main{
     position: relative;
     display: grid;
-    margin: auto 5%;
+    margin: auto 10%;
 }
 header{
     position: relative;
@@ -54,15 +54,16 @@ p{
 
 }
 h2{
+    margin-top: 15px;
     font-family: vinegar;
     font-size: 45px;
-    text-decoration: underline;
+    text-decoration: underline overline;
     text-underline-position: under;
     margin-bottom: 25px;
 }
 .title-link{
     text-decoration: none;
-    color: black
+    color: black;
 }
 .casey:hover{
     transform: scale(1.05);
@@ -180,6 +181,9 @@ footer{
 @media screen and (max-width: 1000px) {
     header{
         grid-template-columns: 30% auto;
+    }
+    main{
+        margin: auto 5%;
     }
 }
 @media screen and (max-width: 860px){
