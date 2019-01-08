@@ -1,3 +1,11 @@
 .walk-it-off{
     margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 25px;
+}
+.band-pic{
+    width: 100%;
+    height: auto;
+    margin-right: 25px;
 }
