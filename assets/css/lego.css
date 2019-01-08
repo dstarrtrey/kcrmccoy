@@ -1,7 +1,10 @@
 .slideshow{
     text-align: center;
-    width: 50%;
+    width: 40%;
     float: left;
+    border: 3px double black;
+    box-sizing: border-box;
+    margin: 0 25px 15px 0;
 }
 
 @media screen and (max-width: 860px){
