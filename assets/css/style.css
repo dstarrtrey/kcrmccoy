@@ -21,7 +21,10 @@ body{
 main{
     position: relative;
     display: grid;
-    margin: 0 10%;
+    margin: 0 5%;
+}
+.all{
+    padding: 0 10%;
 }
 header{
     position: relative;
@@ -77,6 +80,7 @@ h2{
 .nav-img{
     width: 100%;
     height: auto;
+    max-width: 150px;
     transition: border-radius .5s cubic-bezier(0, 1, 0.5, 1);
 }
 .nav-link{
@@ -111,6 +115,7 @@ h2{
     position: absolute;
     bottom: 0;
     width: 100%;
+    max-width: 150px;
     z-index: 1;
     transition: height .5s .2s cubic-bezier(0, 1, 0.5, 1);
     background-color: white;
@@ -180,6 +185,32 @@ footer{
     font-size: 12px;
     position: relative;
     bottom: 1px;
+}
+.triangle{
+    width: 10%;
+    max-width: 50px;
+    height: auto;
+    /* filter: brightness(0); */
+}
+.tl{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.bl{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.tr{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.br{
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
 @media screen and (max-width: 1000px) {
     header{

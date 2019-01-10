@@ -1,5 +1,6 @@
 $(document).ready(function(){
-    $(".nav-link").hover(function() {
+    const navLink = $(".nav-link");
+    navLink.hover(function() {
             $(`#${this.id}-ttl`).removeClass( "text-off" );
             $(`#${this.id}-img`).removeClass( "img-off" );
             $(`#${this.id}-solid`).removeClass( "solid-off" );
