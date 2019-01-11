@@ -13,7 +13,7 @@ $(document).ready(function(){
             link.preventDefault();
             const data = link.target.getAttribute('data-href');
             const url = link.target.href;
-            console.log(url);
+            console.log('url',url);
             //animateOut();
             //setTimeout(function(){
             requestContent(url);
@@ -21,7 +21,6 @@ $(document).ready(function(){
             //animateIn();
             //}, 3000);
         }
-        link.stopPropogation();
       };
     // const loadPage = link => {
     //     if(link.target != link.currentTarget){
@@ -62,10 +61,11 @@ $(document).ready(function(){
         while (target && !target.href) {
             target = target.parentNode;
         }
-        console.log(target);
+        console.log('target', target);
         if (target) {
             clickedElement.preventDefault();
         }
+        clickedElement.stopPropogation();
         loadPage(clickedElement);
     });
     
