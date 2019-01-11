@@ -9,7 +9,7 @@ $(document).ready(function(){
         all.load(`${file} .all`);
     }
     const loadPage = link => {
-        console.log(link);
+        console.log(link.target);
         if(link.target != link.currentTarget){
             link.preventDefault();
             const data = link.target.getAttribute('data-href');
