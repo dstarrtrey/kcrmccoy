@@ -1,5 +1,29 @@
 $(document).ready(function(){
+    const links = $(".links");
     const navLink = $(".nav-link");
+    const all = $(".all");
+    const main = $("main");
+    const footer = $("footer");
+    
+    const request = file => {
+        all.load(`${file} .all`);
+    }
+    const loadPage = link => {
+        if(link.target != link.currentTarget){
+            link.preventDefault();
+            const data = link.target.getAttribute('data-href');
+            const url = link.target.href;
+            console.log(url);
+            //animateOut();
+            setTimeout(function(){
+            request(url);
+            history.pushState(data, null, url);
+            //animateIn();
+            }, 3000);
+        }
+        link.stopPropogation();
+    };
+    
     navLink.hover(function() {
             $(`#${this.id}-ttl`).removeClass( "text-off" );
             $(`#${this.id}-img`).removeClass( "img-off" );
@@ -16,4 +40,7 @@ $(document).ready(function(){
             $(`#${this.id}-solid`).removeClass( "solid-hover" );
         }
     );
+    links.on("click", clickElement => {
+        loadPage(clickedElement);
+    });
 });
