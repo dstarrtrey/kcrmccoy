@@ -49,7 +49,7 @@ $(document).ready(function(){
         if (target) {
             clickedElement.preventDefault();
         }
-        clickedElement.stopPropogation();
+        //clickedElement.stopPropogation();
         loadPage(clickedElement);
     });
     
