@@ -9,9 +9,11 @@ $(document).ready(function(){
         all.load(`${file} .all`);
     }
     const loadPage = link => {
+        console.log(link);
         if(link.target != link.currentTarget){
             link.preventDefault();
             const data = link.target.getAttribute('data-href');
+            console.log(data);
             const url = link.target.href;
             console.log(url);
             //animateOut();
@@ -19,7 +21,7 @@ $(document).ready(function(){
             request(url);
             history.pushState(data, null, url);
             //animateIn();
-            }, 3000);
+            }, 0);
         }
         link.stopPropogation();
     };
