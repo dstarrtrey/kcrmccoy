@@ -9,6 +9,10 @@ $(document).ready(function(){
         all.load(`${file} .all`);
     }
     const loadPage = link => {
+        let target = link.target;
+        while (target && !target.href) {
+            target = target.parentNode;
+        }
         if(link.target != link.currentTarget){
             link.preventDefault();
             const data = link.target.getAttribute('data-href');
@@ -57,10 +61,7 @@ $(document).ready(function(){
     
     links.on("click", clickedElement => {
         console.log("triggered");
-        let target = clickedElement.target;
-        while (target && !target.href) {
-            target = target.parentNode;
-        }
+        
         console.log('target', target);
         if (target) {
             clickedElement.preventDefault();
