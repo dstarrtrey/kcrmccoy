@@ -190,6 +190,7 @@ footer{
     bottom: 1px;
 }
 .triangles{
+    z-index: -1;
     position: absolute;
     width: 90%;
     margin: 0 5%;
