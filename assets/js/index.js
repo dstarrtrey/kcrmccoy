@@ -15,11 +15,11 @@ $(document).ready(function(){
             const url = link.target.href;
             console.log(url);
             //animateOut();
-            setTimeout(function(){
+            //setTimeout(function(){
             requestContent(url);
             history.pushState(data, null, url);
             //animateIn();
-          }, 3000);
+            //}, 3000);
         }
         link.stopPropogation();
       };
