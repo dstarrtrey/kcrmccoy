@@ -5,7 +5,7 @@ $(document).ready(function(){
     const main = $("main");
     const footer = $("footer");
     
-    const request = file => {
+    /*const request = file => {
         all.load(`${file} .all`);
     }
     const loadPage = link => {
@@ -29,7 +29,7 @@ $(document).ready(function(){
         }
         link.stopPropogation();
     };
-    
+    */
     navLink.hover(function() {
             $(`#${this.id}-ttl`).removeClass( "text-off" );
             $(`#${this.id}-img`).removeClass( "img-off" );
@@ -46,8 +46,10 @@ $(document).ready(function(){
             $(`#${this.id}-solid`).removeClass( "solid-hover" );
         }
     );
+    /*
     links.on("click", clickedElement => {
         console.log("triggered");
         loadPage(clickedElement);
     });
+    */
 });
