@@ -10,6 +10,10 @@ $(document).ready(function(){
     }
     const loadPage = link => {
         console.log(link.target);
+        while (link && !link.href) {
+            link = link.parentNode;
+        }
+        console.log(link.target);
         if(link.target != link.currentTarget){
             link.preventDefault();
             const data = link.target.getAttribute('data-href');
