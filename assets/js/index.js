@@ -9,26 +9,35 @@ $(document).ready(function(){
         all.load(`${file} .all`);
     }
     const loadPage = link => {
-        console.log(link.target);
-        while (link && !link.href) {
-            link = link.parentNode;
-        }
-        console.log(link.target);
         if(link.target != link.currentTarget){
             link.preventDefault();
             const data = link.target.getAttribute('data-href');
-            console.log(data);
             const url = link.target.href;
             console.log(url);
             //animateOut();
             setTimeout(function(){
-            request(url);
+            requestContent(url);
             history.pushState(data, null, url);
             //animateIn();
-            }, 0);
+          }, 3000);
         }
         link.stopPropogation();
-    };
+      };
+    // const loadPage = link => {
+    //     if(link.target != link.currentTarget){
+    //         link.preventDefault();
+    //         const data = link.target.getAttribute('data-href');
+    //         const url = link.target.href;
+    //         console.log(url);
+    //         //animateOut();
+    //         setTimeout(function(){
+    //         request(url);
+    //         history.pushState(data, null, url);
+    //         //animateIn();
+    //         }, 0);
+    //     }
+    //     link.stopPropogation();
+    // };
     
     navLink.hover(function() {
             $(`#${this.id}-ttl`).removeClass( "text-off" );
@@ -49,6 +58,14 @@ $(document).ready(function(){
     
     links.on("click", clickedElement => {
         console.log("triggered");
+        let target = clickedElement.target;
+        while (target && !target.href) {
+            target = target.parentNode;
+        }
+        console.log(target);
+        if (target) {
+            clickedElement.preventDefault();
+        }
         loadPage(clickedElement);
     });
     
