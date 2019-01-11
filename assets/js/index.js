@@ -40,7 +40,8 @@ $(document).ready(function(){
             $(`#${this.id}-solid`).removeClass( "solid-hover" );
         }
     );
-    links.on("click", clickElement => {
+    links.on("click", clickedElement => {
+        console.log("triggered");
         loadPage(clickedElement);
     });
 });
