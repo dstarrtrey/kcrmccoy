@@ -5,7 +5,7 @@ $(document).ready(function(){
     const main = $("main");
     const footer = $("footer");
     
-    const request = file => {
+    const requestContent = file => {
         all.load(`${file} .all`);
     }
     const loadPage = link => {
