@@ -8,7 +8,7 @@ $(document).ready(function(){
     const request = file => {
         all.load(`${file} .all`);
     }
-    const load = link => {
+    const loadPage = link => {
         if(link.target != link.currentTarget){
             link.preventDefault();
             const data = link.target.getAttribute('data-href');
@@ -42,6 +42,6 @@ $(document).ready(function(){
     );
     links.on("click", clickedElement => {
         console.log("triggered");
-        load(clickedElement);
+        loadPage(clickedElement);
     });
 });
