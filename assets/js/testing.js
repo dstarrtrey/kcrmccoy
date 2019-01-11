@@ -11,34 +11,32 @@
             }).then(response => {cache[url] = response.text; return cache[url]});
         }
     };
-    const animateContent = (bfor, aftr) => {
-        bfor.style.position = 'absolute';
+    const animateOut = bfor => {
         const fadeOut = bfor.animate({
             opacity: [1, 0],
         }, ttlAniLnth);
+    };
+    const animateIn = aftr => {
         const fadeIn = aftr.animate({
             opacity: [0, 1], 
         }, ttlAniLnth);
-        fadeIn.onfinish = function() {
-            bfor.parent().remove(bfor);
-        };
-    };
-    const animateHeader = (bfor, aftr) => {
-        //bfor.style.position = 'absolute';
-        const fadeOut = bfor.animate({
-            position: "absolute",
-            max-width: "100%"
-        }, ttlAniLnth);
-        const fadeIn = setTimeout(function(){
-            aftr.animate({
-                position: "relative",
-                max-width: "150px" 
-            }, ttlAniLnth);
-        }, ttlAniLnth);
-        fadeIn.onfinish = function() {
-            bfor.parent().remove(bfor);
-        };
-    };
+    }; 
+    // const animateHeader = (bfor, aftr) => {
+    //     //bfor.style.position = 'absolute';
+    //     const fadeOut = bfor.animate({
+    //         position: "absolute",
+    //         max-width: "100%"
+    //     }, ttlAniLnth);
+    //     const fadeIn = setTimeout(function(){
+    //         aftr.animate({
+    //             position: "relative",
+    //             max-width: "150px" 
+    //         }, ttlAniLnth);
+    //     }, ttlAniLnth);
+    //     fadeIn.onfinish = function() {
+    //         bfor.parent().remove(bfor);
+    //     };
+    // };
     const switchPage = () => {
         const url = location.href;
         loadPage(url).then(responseText => {
@@ -58,7 +56,7 @@
         if (target) {
             x.preventDefault();
             history.pushState(null, null, target.href);
-            changePage();
+            switchPage();
             return true;
         }
     };

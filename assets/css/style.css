@@ -21,12 +21,14 @@ body{
 main{
     position: relative;
     display: grid;
-    margin: 0 5%;
+    margin: 0;
+    overflow: hidden;
 }
 .all{
     padding: 0 10%;
 }
 header{
+    overflow: hidden;
     position: relative;
     margin: 0 auto;
     width: 100%;
@@ -115,7 +117,6 @@ h2{
     position: absolute;
     bottom: 0;
     width: 100%;
-    max-width: 150px;
     z-index: 1;
     transition: height .5s .2s cubic-bezier(0, 1, 0.5, 1);
     background-color: white;
@@ -157,6 +158,8 @@ footer{
     text-align: center;
     position: relative;
     margin-top: 25px;
+    overflow: hidden;
+    height: 90px;
 }
 .footer-links img{
     width: 50px;
@@ -186,9 +189,15 @@ footer{
     position: relative;
     bottom: 1px;
 }
+.triangles{
+    position: absolute;
+    width: 90%;
+    margin: 0 5%;
+    height: 100%;
+}
 .triangle{
-    width: 10%;
-    max-width: 50px;
+    z-index: 3;
+    width: 50px;
     height: auto;
     /* filter: brightness(0); */
 }
