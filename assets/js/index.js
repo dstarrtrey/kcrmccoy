@@ -61,8 +61,7 @@ $(document).ready(function(){
     
     links.on("click", clickedElement => {
         console.log("triggered");
-        
-        console.log('target', target);
+        let target = clickedElement.target;
         if (target) {
             clickedElement.preventDefault();
         }
