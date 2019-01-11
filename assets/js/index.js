@@ -59,7 +59,7 @@ $(document).ready(function(){
         }
     );
     
-    links.on("click", clickedElement => {
+    links.on("click", function(clickedElement) {
         console.log("triggered");
         let target = clickedElement.target;
         if (target) {
