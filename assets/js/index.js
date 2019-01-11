@@ -9,9 +9,8 @@ $(document).ready(function(){
         all.load(`${file} .all`);
     }
     const loadPage = link => {
-        let target = link.target;
-        while (target && !target.href) {
-            target = target.parentNode;
+        while (link.target && !link.target.href) {
+            link.target = link.target.parentNode;
         }
         if(link.target != link.currentTarget){
             link.preventDefault();
@@ -26,22 +25,7 @@ $(document).ready(function(){
             //}, 3000);
         }
       };
-    // const loadPage = link => {
-    //     if(link.target != link.currentTarget){
-    //         link.preventDefault();
-    //         const data = link.target.getAttribute('data-href');
-    //         const url = link.target.href;
-    //         console.log(url);
-    //         //animateOut();
-    //         setTimeout(function(){
-    //         request(url);
-    //         history.pushState(data, null, url);
-    //         //animateIn();
-    //         }, 0);
-    //     }
-    //     link.stopPropogation();
-    // };
-    
+
     navLink.hover(function() {
             $(`#${this.id}-ttl`).removeClass( "text-off" );
             $(`#${this.id}-img`).removeClass( "img-off" );
