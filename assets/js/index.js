@@ -16,12 +16,12 @@ $(document).ready(function(){
         triangles.css({"z-index": "3"});
         all.css({"height": `${all.height()}px`, "width": `${all.width()}px`}); //fixes width of content
         //animated changes
-        all.animate({"left": "-50%", "top": "-50%"}, {duration: animationLength});
-        ttl.animate({"height": "87px"}, {duration: animationLength});
-        solid.animate({"height":"100%", "max-width":"none", "width": "3000%"}, {duration: animationLength, queue: false});
-        footer.animate({"height": "10px"}, {duration: animationLength, queue: false});
-        triangles.animate({"margin": "0", "width": "100%"}, {duration: animationLength, queue: false});
-        main.animate({"left": "50%", "top": "50%", "transform":"translate(-50%, -50%)", "width": "50px", "height": "50px"}, {duration: animationLength, queue: false});
+        all.animate({"left": "-50%", "top": "-50%"}, {duration: animationLength-2000});
+        ttl.animate({"height": "87px"}, {duration: animationLength-2000});
+        solid.animate({"height":"100%", "max-width":"none", "width": "3000%"}, {duration: animationLength-4000, queue: false});
+        footer.delay(3000).animate({"height": "10px"}, {duration: animationLength-3000, queue: false});
+        triangles.animate({"margin": "0", "width": "100%"}, {duration: animationLength-2000, queue: false});
+        main.animate({"left": "50%", "top": "50%", "transform":"translate(-50%, -50%)", "width": "50px", "height": "50px"}, {duration: animationLength-2000, queue: false});
     };
     const requestContent = file => {
         all.load(`${file} .all`);
