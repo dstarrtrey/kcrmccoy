@@ -350,4 +350,6 @@ footer{
   .rollOut {
     -webkit-animation-name: rollOut;
     animation-name: rollOut;
+    animation-duration: 0.5s;
+    -webkit-animation-duration: 0.5s;
   }
