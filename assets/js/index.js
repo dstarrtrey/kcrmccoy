@@ -16,9 +16,9 @@ $(document).ready(function(){
         triangles.css({"z-index": "3"});
         all.css({"height": `${all.height()}px`, "width": `${all.width()}px`}); //fixes width of content
         //animated changes
-        ttl.animate({"height": "87px"}, {duration: animationLength/4, start:});
+        ttl.animate({"height": "87px"}, {duration: animationLength/4});
         solid.animate({"height":"100%", "max-width":"none", "width": "3000%"}, {duration: animationLength/4, queue: false});
-        footer.stop(true, true).delay(3000).animate({"height": "10px"}, {duration: animationLength/4, queue: false});
+        footer.stop(true, true).delay(3000).animate({"height": "10px", "margin-top": "105px"}, {duration: animationLength/4, queue: false});
         triangles.animate({"margin": "0", "width": "100%"}, {duration: animationLength/2, queue: false});
         all.animate({"left": "-50%", "top": "-50%"}, {duration: animationLength/2});
         main.animate({"left": "50%", "top": "50%", "transform":"translate(-50%, -50%)", "width": "50px", "height": "50px"}, {duration: animationLength/2, queue: false});
@@ -29,18 +29,37 @@ $(document).ready(function(){
         //animated changes
        
         ttl.animate({"height": "87px"}, {duration: animationLength-2000});
-        solid.animate({"height":"100%", "max-width":"none", "width": "3000%"}, {duration: animationLength-4000, queue: false});
-        footer.stop().delay(3000).animate({"height": "10px"}, {duration: animationLength-3000, queue: false});
-        triangles.animate({"margin": "0", "width": "100%"}, {duration: animationLength-2000, queue: false});
-        all.animate({"left": "-50%", "top": "-50%"}, {duration: animationLength-2000});
-        main.animate({"left": "50%", "top": "50%", "transform":"translate(-50%, -50%)", "width": "50px", "height": "50px"}, {duration: animationLength-2000, queue: false});
+        solid.animate({"height":"0%", "max-width":"none", "width": "100%"}, {duration: animationLength-4000, queue: false});
+        footer.stop().delay(3000).animate({"height": "90px", "margin-top":"25px"}, {duration: animationLength-3000, queue: false});
+        triangles.animate({"margin": "0 5%", "width": "90%"}, {duration: animationLength-2000, queue: false});
+        all.animate({"left": "0%", "top": "0%"}, {duration: animationLength-2000});
+        main.animate({"left": "0%", "top": "0%", "transform":"translate(0%, 0%)", "width": "100%", "height": "100%"}, {duration: animationLength-2000, queue: false});
         //instant changes
         setTimeout(function(){
             navLink.unbind('mouseenter mouseleave');
             navLink.removeAttr("style")
             jQLink.removeAttr("style")
             triangles.removeAttr("style")
-            all.removeAttr("style"); 
+            all.removeAttr("style");
+            ttl.removeAttr("style");
+            solid.removeAttr("style");
+            footer.removeAttr("style");
+            main.removeAttr("style");
+            navLink.hover(function() {
+                $(`#${this.id}-ttl`).removeClass( "text-off" );
+                $(`#${this.id}-img`).removeClass( "img-off" );
+                $(`#${this.id}-solid`).removeClass( "solid-off" );
+                $(`#${this.id}-ttl`).addClass( "text-hover" ); 
+                $(`#${this.id}-img`).addClass( "img-hover" );  
+                $(`#${this.id}-solid`).addClass( "solid-hover" ); 
+            }, function() {
+                $(`#${this.id}-ttl`).addClass( "text-off" );
+                $(`#${this.id}-img`).addClass( "img-off" );
+                $(`#${this.id}-solid`).addClass( "solid-off" );
+                $(`#${this.id}-ttl`).removeClass( "text-hover" );
+                $(`#${this.id}-img`).removeClass( "img-hover" );
+                $(`#${this.id}-solid`).removeClass( "solid-hover" );
+            }); 
         }, animationLength);
         //fixes width of content
     }
@@ -66,7 +85,7 @@ $(document).ready(function(){
             setTimeout(function(){
             requestContent(url);
             history.pushState(data, null, url);
-            //animateIn();
+            animateIn();
             }, animationLength);
         }
     };
