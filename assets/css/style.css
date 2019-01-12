@@ -303,6 +303,8 @@ footer{
     }
     .yt-iframe{
         max-width: 500px;
+        height: 0;
+        transition: height .5s ease-in-out;
     }
     main{
         margin: auto 0;
@@ -321,6 +323,31 @@ footer{
     .logo{
         width: 100%;
         margin: auto;
+    }
+}
+.spin{
+    animation: spin 2500 forwards;
+    -webkit-animation: spin 2500 forwards;
+    animation-timing-function: cubic-bezier(0.785, 0.135, 0.150, 0.860);
+}
+@keyframes spin {
+    0% {
+        transform:rotate(0deg) scale(1.0);
+        border-radius: 0;
+    }
+    40%{
+      
+    }
+    50%{
+      border-radius: 50%;
+      transform: rotate(720deg) scale(1.2);
+    }
+    60%{
+      
+    }
+    100% {
+        transform:rotate(1440deg) scale(1.0);
+        border-radius: 0;
     }
 }
 .rollOut {

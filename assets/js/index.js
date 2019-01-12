@@ -18,16 +18,16 @@ $(document).ready(function(){
         triangles.css({"z-index": "3"});
         all.css({"height": `${all.height()}px`, "width": `${all.width()}px`}); //fixes width of content
         //animated changes
-        solid.animate({"height":"100%", "max-width":"none", "width": "3000%"}, {duration: animationLength/4, queue: false});
+        solid.animate({"height":"100%", "max-width":"none", "width": "3000%"}, {duration: animationLength/6, queue: false});
         footer.animate({"height": "10px", "margin-top": "105px"}, {duration: animationLength/4, queue: false});
         all.animate({"left": "-50%", "top": "-50%"}, {duration: animationLength/2});
         main.animate({"left": "50%", "top": "50%", "transform":"translate(-50%, -50%)", "width": "50px", "height": "50px"}, {duration: animationLength/2, queue: false});
-        ttl.addClass( "text-off" );
-        img.addClass( "img-off" );
-        solid.addClass( "solid-off" );
-        ttl.removeClass( "text-hover" );
-        img.removeClass( "img-hover" );
-        solid.removeClass( "solid-hover" );
+        ttl.addClass("text-off");
+        img.addClass("img-off");
+        solid.addClass("solid-off");
+        ttl.removeClass("text-hover");
+        img.removeClass("img-hover");
+        solid.removeClass("solid-hover");
     };
     const animateIn = jQLink => {
         const solid = jQLink.children(`.solid`);
@@ -92,11 +92,14 @@ $(document).ready(function(){
             console.log($(`#${link.target.id}`));
             animateOut($(`#${link.target.id}`));
             
-            //animateOut(link.target);
             setTimeout(function(){
-            requestContent(url);
-            history.pushState(data, null, url);
-            animateIn($(`#${link.target.id}`));
+                main.addClass("spin");
+                setTimeout(function(){
+                    requestContent(url);
+                    history.pushState(data, null, url);
+                    animateIn($(`#${link.target.id}`));
+                    main.removeClass("spin");
+                }, 2500)
             }, animationLength);
         }
     };
