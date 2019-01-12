@@ -25,6 +25,7 @@ main{
     overflow: hidden;
 }
 .all{
+    position: relative;
     padding: 0 10%;
 }
 header{
