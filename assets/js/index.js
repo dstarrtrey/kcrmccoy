@@ -41,7 +41,6 @@ $(document).ready(function(){
         //instant changes
         setTimeout(function(){
             ttl.removeClass("rollOut");
-            navLink.unbind('mouseenter mouseleave');
             navLink.removeAttr("style")
             jQLink.removeAttr("style")
             triangles.removeAttr("style")
@@ -100,7 +99,7 @@ $(document).ready(function(){
                     animateIn($(`#${link.target.id}`));
                     main.removeClass("spin");
                 }, 2500)
-            }, animationLength);
+            }, animationLength/2);
         }
     };
     navLink.hover(function() {
