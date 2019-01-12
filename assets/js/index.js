@@ -23,8 +23,8 @@ $(document).ready(function(){
             console.log('link', link);
             console.log('target', link.target);
             console.log('solid-div', link.target.children(`#${data}-solid`));
-            alert($(`#${link.target.id}`).children[`${data}-solid`].id);
-            //$(`#${link.target.id}`).children(`#${data}-solid`).css({"background-color": "blue"});
+            //alert($(`#${link.target.id}`).children[`${data}-solid`].id);
+            $(`#${link.target.id}`).children(`#${data}-solid`).css({"background-color": "blue"});
             //animateOut(link.target);
             //setTimeout(function(){
             requestContent(url);
