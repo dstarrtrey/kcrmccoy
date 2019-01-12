@@ -323,7 +323,12 @@ footer{
         margin: auto;
     }
 }
-
+.rollOut {
+    -webkit-animation-name: rollOut;
+    animation-name: rollOut;
+    animation-duration: 0.5s;
+    -webkit-animation-duration: 0.5s;
+}
 @-webkit-keyframes rollOut {
     from {
       opacity: 1;
@@ -347,9 +352,4 @@ footer{
       transform: translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg);
     }
   }
-  .rollOut {
-    -webkit-animation-name: rollOut;
-    animation-name: rollOut;
-    animation-duration: 0.5s;
-    -webkit-animation-duration: 0.5s;
-  }
+ 
