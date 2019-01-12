@@ -19,7 +19,7 @@ $(document).ready(function(){
         solid.animate({"height":"100%", "max-width":"none", "width": "3000%"}, {duration: animationLength, queue: false});
         footer.animate({"height": "10px"}, {duration: animationLength, queue: false});
         triangles.animate({"margin": "0", "width": "100%"}, {duration: animationLength, queue: false});
-        main.animate({"left": "50%", "top": "50%", "width": "50px", "height": "50px"}, {duration: animationLength, queue: false});
+        main.animate({"left": "50%", "top": "50%", "transform":"translate(-50%, -50%)", "width": "50px", "height": "50px"}, {duration: animationLength, queue: false});
     };
     const requestContent = file => {
         all.load(`${file} .all`);
