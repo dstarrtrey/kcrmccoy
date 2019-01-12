@@ -7,9 +7,9 @@ $(document).ready(function(){
     const footer = $("footer");
     const animationLength = 1000;
     const animateOut = jQLink => {
-
         const solid = jQLink.children(`.solid`);
         const ttl = jQLink.children(`.ttl`);
+        navLink.unbind('mouseenter mouseleave');
         navLink.css({"z-index":"-1"});
         jQLink.css({"z-index":"1"});
         ttl.css({"height": "87px"});
