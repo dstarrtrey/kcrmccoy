@@ -27,10 +27,10 @@ $(document).ready(function(){
         const ttl = jQLink.children(`.subtitle`);
         //animated changes
        
-        solid.animate({"height":"0%", "max-width":"none", "width": "100%"}, {duration: animationLength-4000, queue: false});
-        footer.stop().delay(3000).animate({"height": "90px", "margin-top":"25px"}, {duration: animationLength-3000, queue: false});
-        all.animate({"left": "0%", "top": "0%"}, {duration: animationLength-2000});
-        main.animate({"left": "0%", "top": "0%", "transform":"translate(0%, 0%)", "width": "100%", "height": "100%"}, {duration: animationLength-2000, queue: false});
+        solid.animate({"height":"0%", "max-width":"none", "width": "100%"}, {duration: animationLength/4, queue: false});
+        footer.animate({"height": "90px", "margin-top":"25px"}, {duration: animationLength/4, queue: false});
+        all.animate({"left": "0%", "top": "0%"}, {duration: animationLength/2});
+        main.animate({"left": "0%", "top": "0%", "transform":"translate(0%, 0%)", "width": "100%", "height": "100%"}, {duration: animationLength/2, queue: false});
         //instant changes
         setTimeout(function(){
             ttl.removeClass("rollOut");
