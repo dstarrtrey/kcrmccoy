@@ -4,7 +4,7 @@ $(document).ready(function(){
     const all = $(".all");
     const main = $("main");
     const footer = $("footer");
-    
+    const animationLength = 1000; 
     const requestContent = file => {
         all.load(`${file} .all`);
     }
@@ -16,15 +16,18 @@ $(document).ready(function(){
             link.preventDefault();
             const data = link.target.getAttribute('data-href');
             const url = link.target.href;
-            console.log('url',url);
+            console.log('this', this);
+            console.log('link', link);
+            console.log('target', link.target);
             //animateOut();
             //setTimeout(function(){
             requestContent(url);
             history.pushState(data, null, url);
             //animateIn();
-            //}, 3000);
+            //}, animationLength);
         }
       };
+
 
     navLink.hover(function() {
             $(`#${this.id}-ttl`).removeClass( "text-off" );
@@ -42,7 +45,6 @@ $(document).ready(function(){
             $(`#${this.id}-solid`).removeClass( "solid-hover" );
         }
     );
-    
     links.on("click", function(clickedElement) {
         console.log("triggered");
         let target = clickedElement.target;
