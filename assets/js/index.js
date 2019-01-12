@@ -7,17 +7,20 @@ $(document).ready(function(){
     const footer = $("footer");
     const animationLength = 1000;
     const animateOut = jQLink => {
-        const solid = jQLink.children(`.solid`); 
+
+        const solid = jQLink.children(`.solid`);
         const ttl = jQLink.children(`.ttl`);
+        navLink.css({"z-index":"-1"});
+        jQLink.css({"z-index":"1"});
         ttl.css({"height": "87px"});
         solid.css({"height":"100%", "max-width":"none", "width": "3000%"});
         footer.css({"height": "10px"});
-        triangles.css({"margin": "0", "width": "100%"});
+        triangles.css({"margin": "0", "width": "100%", "z-index": "3"});
         main.css({"margin": "auto", "width": "50px", "height": "50px"});
-    } 
+    };
     const requestContent = file => {
         all.load(`${file} .all`);
-    }
+    };
     const loadPage = link => {
         while (link.target && !link.target.href) {
             link.target = link.target.parentNode;
@@ -42,9 +45,7 @@ $(document).ready(function(){
             //animateIn();
             //}, animationLength);
         }
-      };
-
-
+    };
     navLink.hover(function() {
             $(`#${this.id}-ttl`).removeClass( "text-off" );
             $(`#${this.id}-img`).removeClass( "img-off" );
