@@ -324,10 +324,8 @@ footer{
     }
 }
 .rollOut {
-    -webkit-animation-name: rollOut;
-    animation-name: rollOut;
-    animation-duration: 0.5s;
-    -webkit-animation-duration: 0.5s;
+    -webkit-animation-name: rollOut 0.75s;
+    animation-name: rollOut 0.75s;
 }
 @-webkit-keyframes rollOut {
     from {

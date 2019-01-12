@@ -10,7 +10,6 @@ $(document).ready(function(){
         const solid = jQLink.children(`.solid`);
         const ttl = jQLink.children(`.subtitle`);
         //instant changes
-        ttl.css({"background-color": "blue"});
         ttl.addClass("rollOut");
         navLink.unbind('mouseenter mouseleave');
         navLink.css({"z-index":"-1"});
