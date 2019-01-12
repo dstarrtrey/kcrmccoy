@@ -30,7 +30,7 @@ $(document).ready(function(){
             console.log('target', link.target);
             navLink.removeClass("active");
             $(`#${link.target.id}`).addClass("active");
-            $(`#${link.target.id}`).children(`.solid`).css({"background-color": "blue"});
+            //$(`#${link.target.id}`).children(`.solid`).css({"background-color": "blue"});
             console.log($(`#${link.target.id}`));
             animateOut($(`#${link.target.id}`));
             //$(`#${link.target.id}`).animateOut(data);
