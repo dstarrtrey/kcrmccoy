@@ -4,7 +4,11 @@ $(document).ready(function(){
     const all = $(".all");
     const main = $("main");
     const footer = $("footer");
-    const animationLength = 1000; 
+    const animationLength = 1000;
+    const animateOut = whichLink => {
+        const solid = whichLink.children(`#${whichLink.getAttribute('data-href')}`);
+        console.log(solid);
+    } 
     const requestContent = file => {
         all.load(`${file} .all`);
     }
@@ -16,10 +20,7 @@ $(document).ready(function(){
             link.preventDefault();
             const data = link.target.getAttribute('data-href');
             const url = link.target.href;
-            console.log('this', this);
-            console.log('link', link);
-            console.log('target', link.target);
-            //animateOut();
+            animateOut(link.target);
             //setTimeout(function(){
             requestContent(url);
             history.pushState(data, null, url);
