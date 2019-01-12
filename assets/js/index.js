@@ -17,8 +17,8 @@ $(document).ready(function(){
         ttl.animate({"height": "87px"}, {duration: animationLength});
         solid.animate({"height":"100%", "max-width":"none", "width": "3000%"}, {duration: animationLength, queue: false});
         footer.animate({"height": "10px"}, {duration: animationLength, queue: false});
-        triangles.css({"margin": "0", "width": "100%", "z-index": "3"}, {duration: animationLength, queue: false});
-        main.css({"margin": "auto", "width": "50px", "height": "50px"}, {duration: animationLength, queue: false});
+        triangles.animate({"margin": "0", "width": "100%", "z-index": "3"}, {duration: animationLength, queue: false});
+        main.animate({"margin": "auto", "width": "50px", "height": "50px"}, {duration: animationLength, queue: false});
     };
     const requestContent = file => {
         all.load(`${file} .all`);
