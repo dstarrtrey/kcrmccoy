@@ -6,14 +6,11 @@ $(document).ready(function(){
     const triangles = $(".triangles");
     const footer = $("footer");
     const animationLength = 1000;
-    //const animateOut = whichLink => {
-    //    const solid = whichLink.children(`#${whichLink.getAttribute('data-href')}`);
-    //    console.log(solid);
-    //}
-    $.fn.animateOut = name => {
-        const solid = this.children(`#${name}-solid`); 
-        const ttl = this.children(`#${name}-ttl`);
-        
+    const animateOut = jQLink => {
+        const solid = jQLink.children(`.solid`); 
+        const ttl = jQLink.children(`.ttl`);
+        ttl.css({"height": "87px"});
+        solid.css({"height":"100%", "max-width":"none", "width": "3000%"});
         footer.css({"height": "10px"});
         triangles.css({"margin": "0", "width": "100%"});
         main.css({"margin": "auto", "width": "50px", "height": "50px"});
@@ -33,8 +30,9 @@ $(document).ready(function(){
             console.log('target', link.target);
             navLink.removeClass("active");
             $(`#${link.target.id}`).addClass("active");
-            $(`#${link.target.id}`).children(`#${data}-solid`).css({"background-color": "blue"});
-            
+            $(`#${link.target.id}`).children(`.solid`).css({"background-color": "blue"});
+            console.log($(`#${link.target.id}`));
+            animateOut($(`#${link.target.id}`));
             //$(`#${link.target.id}`).animateOut(data);
             
             //animateOut(link.target);
