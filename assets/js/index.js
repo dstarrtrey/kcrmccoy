@@ -24,6 +24,8 @@ $(document).ready(function(){
             console.log('target', link.target);
             //console.log('solid-div', link.target.children(`#${data}-solid`));
             //alert($(`#${link.target.id}`).children[`${data}-solid`].id);
+            navLink.removeClass("active");
+            $(`#${link.target.id}`).addClass("active");
             $(`#${link.target.id}`).children(`#${data}-solid`).css({"background-color": "blue"});
             //animateOut(link.target);
             //setTimeout(function(){
