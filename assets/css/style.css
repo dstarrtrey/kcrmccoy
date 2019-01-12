@@ -222,6 +222,53 @@ footer{
     bottom: 0;
     right: 0;
 }
+.lego-slideshow{
+    text-align: center;
+    float: left;
+    width: 300px;
+    border: 3px double black;
+    box-sizing: border-box;
+    margin: 0 25px 15px 0;
+}
+.about-pic{
+    width: 35%;
+    margin: 0 25px 15px 0;
+    float: left;
+    height: auto;
+    border: 3px double black;
+    box-sizing: border-box;
+}
+.walk-it-off{
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 25px;
+    justify-items: center;
+}
+.band-pic{
+    width: 100%;
+    height: auto;
+    margin-right: 25px;
+    border: 3px double black;
+}
+.logo{
+    max-width: 350px;
+    float: left;
+    margin: 0 25px 15px 0;
+    border: 3px double black;
+    box-sizing: border-box;
+}
+.youtube-embeds{
+    clear: both;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 25px;
+}
+.yt-iframe{
+    width: 100%;
+    height: 250px;
+}
+
 @media screen and (max-width: 1000px) {
     header{
         grid-template-columns: 30% auto;
@@ -237,9 +284,41 @@ footer{
     h2{
         text-align: center;
     }
+    
+    .lego-slideshow{
+        width: 100%;
+        margin: auto;
+    }
+    .about-pic{
+        width: 50%
+    }
+    .logo{
+        max-width: 100%;
+        width: 50%
+    }
+    .youtube-embeds{
+        display: block;
+        text-align: center;
+    }
+    .yt-iframe{
+        max-width: 500px;
+    }
+    main{
+        margin: auto 0;
+    }
 }
 @media screen and (max-width: 500px){
     p{
         text-align: center;
+    }
+    .lego-slideshow{
+        max-width: 100%;
+    }
+    .about-pic{
+        width: 100%;
+    }
+    .logo{
+        width: 100%;
+        margin: auto;
     }
 }
