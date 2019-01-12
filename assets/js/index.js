@@ -100,7 +100,7 @@ $(document).ready(function(){
                     animateIn($(`#${link.target.id}`));
                     main.removeClass("spin");
                 }, 2500)
-            }, animationLength-2000);
+            }, animationLength);
         }
     };
     navLink.hover(function() {
