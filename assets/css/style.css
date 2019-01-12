@@ -326,8 +326,8 @@ footer{
     }
 }
 .spin{
-    animation: spin 2500ms forwards;
-    -webkit-animation: spin 2500ms forwards;
+    animation: spin 1500ms forwards;
+    -webkit-animation: spin 1500ms forwards;
     animation-timing-function: cubic-bezier(0.785, 0.135, 0.150, 0.860);
 }
 @keyframes spin {
