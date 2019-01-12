@@ -41,11 +41,11 @@ $(document).ready(function(){
             animateOut($(`#${link.target.id}`));
             
             //animateOut(link.target);
-            //setTimeout(function(){
+            setTimeout(function(){
             requestContent(url);
             history.pushState(data, null, url);
             //animateIn();
-            //}, animationLength);
+            }, animationLength);
         }
     };
     navLink.hover(function() {
