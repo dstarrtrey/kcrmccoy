@@ -93,12 +93,12 @@ $(document).ready(function(){
             animateOut($(`#${link.target.id}`));
             
             setTimeout(function(){
-                main.addClass("spin");
+                triangles.addClass("spin");
                 setTimeout(function(){
                     requestContent(url);
                     history.pushState(data, null, url);
                     animateIn($(`#${link.target.id}`));
-                    main.removeClass("spin");
+                    triangles.removeClass("spin");
                 }, 2500)
             }, animationLength);
         }
