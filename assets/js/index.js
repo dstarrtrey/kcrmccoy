@@ -14,6 +14,7 @@ $(document).ready(function(){
         navLink.css({"z-index":"-1"});
         jQLink.css({"z-index":"1"});
         triangles.css({"z-index": "3"});
+        all.css({"height": `${all.height()}px`, "width": `${all.width()}px`}); //fixes width of content
         //animated changes
         ttl.animate({"height": "87px"}, {duration: animationLength});
         solid.animate({"height":"100%", "max-width":"none", "width": "3000%"}, {duration: animationLength, queue: false});
