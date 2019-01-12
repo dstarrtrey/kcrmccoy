@@ -10,13 +10,13 @@ $(document).ready(function(){
         const solid = jQLink.children(`.solid`);
         const ttl = jQLink.children(`.ttl`);
         //instant changes
+        ttl.addClass("rollOut");
         navLink.unbind('mouseenter mouseleave');
         navLink.css({"z-index":"-1"});
         jQLink.css({"z-index":"1"});
         triangles.css({"z-index": "3"});
         all.css({"height": `${all.height()}px`, "width": `${all.width()}px`}); //fixes width of content
         //animated changes
-        ttl.animate({"height": "87px"}, {duration: animationLength/4});
         solid.animate({"height":"100%", "max-width":"none", "width": "3000%"}, {duration: animationLength/4, queue: false});
         footer.stop(true, true).delay(3000).animate({"height": "10px", "margin-top": "105px"}, {duration: animationLength/4, queue: false});
         all.animate({"left": "-50%", "top": "-50%"}, {duration: animationLength/2});
@@ -27,13 +27,13 @@ $(document).ready(function(){
         const ttl = jQLink.children(`.ttl`);
         //animated changes
        
-        ttl.animate({"height": "0"}, {duration: animationLength-2000});
         solid.animate({"height":"0%", "max-width":"none", "width": "100%"}, {duration: animationLength-4000, queue: false});
         footer.stop().delay(3000).animate({"height": "90px", "margin-top":"25px"}, {duration: animationLength-3000, queue: false});
         all.animate({"left": "0%", "top": "0%"}, {duration: animationLength-2000});
         main.animate({"left": "0%", "top": "0%", "transform":"translate(0%, 0%)", "width": "100%", "height": "100%"}, {duration: animationLength-2000, queue: false});
         //instant changes
         setTimeout(function(){
+            ttl.removeClass("rollOut");
             navLink.unbind('mouseenter mouseleave');
             navLink.removeAttr("style")
             jQLink.removeAttr("style")
@@ -43,6 +43,12 @@ $(document).ready(function(){
             solid.removeAttr("style");
             footer.removeAttr("style");
             main.removeAttr("style");
+            $(`.ttl`).addClass( "text-off" );
+            $(`.img`).addClass( "img-off" );
+            $(`.solid`).addClass( "solid-off" );
+            $(`.ttl`).removeClass( "text-hover" );
+            $(`.img`).removeClass( "img-hover" );
+            $(`.solid`).removeClass( "solid-hover" );
             navLink.hover(function() {
                 $(`#${this.id}-ttl`).removeClass( "text-off" );
                 $(`#${this.id}-img`).removeClass( "img-off" );
