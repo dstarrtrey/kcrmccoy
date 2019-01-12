@@ -5,7 +5,7 @@ $(document).ready(function(){
     const main = $("main");
     const triangles = $(".triangles");
     const footer = $("footer");
-    const animationLength = 5000;
+    const animationLength = 2000;
     const animateOut = jQLink => {
         const solid = jQLink.children(`.solid`);
         const ttl = jQLink.children(`.subtitle`);
@@ -18,7 +18,7 @@ $(document).ready(function(){
         all.css({"height": `${all.height()}px`, "width": `${all.width()}px`}); //fixes width of content
         //animated changes
         solid.animate({"height":"100%", "max-width":"none", "width": "3000%"}, {duration: animationLength/4, queue: false});
-        footer.stop(true, true).delay(3000).animate({"height": "10px", "margin-top": "105px"}, {duration: animationLength/4, queue: false});
+        footer.animate({"height": "10px", "margin-top": "105px"}, {duration: animationLength/4, queue: false});
         all.animate({"left": "-50%", "top": "-50%"}, {duration: animationLength/2});
         main.animate({"left": "50%", "top": "50%", "transform":"translate(-50%, -50%)", "width": "50px", "height": "50px"}, {duration: animationLength/2, queue: false});
     };
