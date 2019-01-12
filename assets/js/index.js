@@ -22,7 +22,7 @@ $(document).ready(function(){
             const url = link.target.href;
             console.log('link', link);
             console.log('target', link.target);
-            console.log('solid-div', link.target.children(`#${data}-solid`));
+            //console.log('solid-div', link.target.children(`#${data}-solid`));
             //alert($(`#${link.target.id}`).children[`${data}-solid`].id);
             $(`#${link.target.id}`).children(`#${data}-solid`).css({"background-color": "blue"});
             //animateOut(link.target);
