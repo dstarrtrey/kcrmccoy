@@ -8,7 +8,7 @@ $(document).ready(function(){
     const animationLength = 5000;
     const animateOut = jQLink => {
         const solid = jQLink.children(`.solid`);
-        const ttl = jQLink.children(`.ttl`);
+        const ttl = jQLink.children(`.subtitle`);
         //instant changes
         ttl.css({"background-color": "blue"});
         ttl.addClass("rollOut");
@@ -25,7 +25,7 @@ $(document).ready(function(){
     };
     const animateIn = jQLink => {
         const solid = jQLink.children(`.solid`);
-        const ttl = jQLink.children(`.ttl`);
+        const ttl = jQLink.children(`.subtitle`);
         //animated changes
        
         solid.animate({"height":"0%", "max-width":"none", "width": "100%"}, {duration: animationLength-4000, queue: false});
