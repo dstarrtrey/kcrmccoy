@@ -15,7 +15,7 @@ $(document).ready(function(){
         navLink.unbind('mouseenter mouseleave');
         navLink.css({"z-index":"-1"});
         jQLink.css({"z-index":"1"});
-        triangles.css({"z-index": "3"});
+        triangles.css({"z-index": "5"});
         all.css({"height": `${all.height()}px`, "width": `${all.width()}px`}); //fixes width of content
         //animated changes
         solid.animate({"height":"100%", "max-width":"none", "width": "3000%"}, {duration: animationLength/6, queue: false});
