@@ -13,12 +13,13 @@ $(document).ready(function(){
         navLink.unbind('mouseenter mouseleave');
         navLink.css({"z-index":"-1"});
         jQLink.css({"z-index":"1"});
+        triangles.css({"z-index": "3"});
         //animated changes
         ttl.animate({"height": "87px"}, {duration: animationLength});
         solid.animate({"height":"100%", "max-width":"none", "width": "3000%"}, {duration: animationLength, queue: false});
         footer.animate({"height": "10px"}, {duration: animationLength, queue: false});
-        triangles.animate({"margin": "0", "width": "100%", "z-index": "3"}, {duration: animationLength, queue: false});
-        main.animate({"margin": "auto", "width": "50px", "height": "50px"}, {duration: animationLength, queue: false});
+        triangles.animate({"margin": "0", "width": "100%"}, {duration: animationLength, queue: false});
+        main.animate({"left": "50%", "top": "50%", "width": "50px", "height": "50px"}, {duration: animationLength, queue: false});
     };
     const requestContent = file => {
         all.load(`${file} .all`);
