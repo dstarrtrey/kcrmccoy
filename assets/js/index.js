@@ -3,11 +3,20 @@ $(document).ready(function(){
     const navLink = $(".nav-link");
     const all = $(".all");
     const main = $("main");
+    const triangles = $(".triangles");
     const footer = $("footer");
     const animationLength = 1000;
     const animateOut = whichLink => {
         const solid = whichLink.children(`#${whichLink.getAttribute('data-href')}`);
         console.log(solid);
+    }
+    $.fn.animateOut = name => {
+        const solid = this.children(`#${name}-solid`); 
+        const ttl = this.children(`#${name}-ttl`);
+
+        footer.css({"height": "10px"});
+        triangles.css({"margin": "0", "width": "100%"});
+        main.css({"margin": "auto", "width": "50px", "height": "50px"});
     } 
     const requestContent = file => {
         all.load(`${file} .all`);
@@ -22,11 +31,12 @@ $(document).ready(function(){
             const url = link.target.href;
             console.log('link', link);
             console.log('target', link.target);
-            //console.log('solid-div', link.target.children(`#${data}-solid`));
-            //alert($(`#${link.target.id}`).children[`${data}-solid`].id);
             navLink.removeClass("active");
             $(`#${link.target.id}`).addClass("active");
             $(`#${link.target.id}`).children(`#${data}-solid`).css({"background-color": "blue"});
+            
+            //$(`#${link.target.id}`).animateOut(data);
+            
             //animateOut(link.target);
             //setTimeout(function(){
             requestContent(url);
