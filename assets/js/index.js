@@ -9,6 +9,7 @@ $(document).ready(function(){
     const animateOut = jQLink => {
         const solid = jQLink.children(`.solid`);
         const ttl = jQLink.children(`.subtitle`);
+        const img = jQLink.children(`.nav-img`)
         //instant changes
         ttl.addClass("rollOut");
         navLink.unbind('mouseenter mouseleave');
@@ -21,6 +22,12 @@ $(document).ready(function(){
         footer.animate({"height": "10px", "margin-top": "105px"}, {duration: animationLength/4, queue: false});
         all.animate({"left": "-50%", "top": "-50%"}, {duration: animationLength/2});
         main.animate({"left": "50%", "top": "50%", "transform":"translate(-50%, -50%)", "width": "50px", "height": "50px"}, {duration: animationLength/2, queue: false});
+        ttl.addClass( "text-off" );
+        img.addClass( "img-off" );
+        solid.addClass( "solid-off" );
+        ttl.removeClass( "text-hover" );
+        img.removeClass( "img-hover" );
+        solid.removeClass( "solid-hover" );
     };
     const animateIn = jQLink => {
         const solid = jQLink.children(`.solid`);
