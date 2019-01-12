@@ -6,14 +6,14 @@ $(document).ready(function(){
     const triangles = $(".triangles");
     const footer = $("footer");
     const animationLength = 1000;
-    const animateOut = whichLink => {
-        const solid = whichLink.children(`#${whichLink.getAttribute('data-href')}`);
-        console.log(solid);
-    }
+    //const animateOut = whichLink => {
+    //    const solid = whichLink.children(`#${whichLink.getAttribute('data-href')}`);
+    //    console.log(solid);
+    //}
     $.fn.animateOut = name => {
         const solid = this.children(`#${name}-solid`); 
         const ttl = this.children(`#${name}-ttl`);
-
+        
         footer.css({"height": "10px"});
         triangles.css({"margin": "0", "width": "100%"});
         main.css({"margin": "auto", "width": "50px", "height": "50px"});
