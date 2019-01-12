@@ -5,7 +5,7 @@ $(document).ready(function(){
     const main = $("main");
     const triangles = $(".triangles");
     const footer = $("footer");
-    const animationLength = 1000;
+    const animationLength = 5000;
     const animateOut = jQLink => {
         const solid = jQLink.children(`.solid`);
         const ttl = jQLink.children(`.ttl`);
@@ -14,11 +14,11 @@ $(document).ready(function(){
         navLink.css({"z-index":"-1"});
         jQLink.css({"z-index":"1"});
         //animated changes
-        ttl.animate({"height": "87px"}, {duration: 1000});
-        solid.animate({"height":"100%", "max-width":"none", "width": "3000%"}, {duration: 1000, queue: false});
-        footer.animate({"height": "10px"}, {duration: 1000, queue: false});
-        triangles.css({"margin": "0", "width": "100%", "z-index": "3"}, {duration: 1000, queue: false});
-        main.css({"margin": "auto", "width": "50px", "height": "50px"}, {duration: 1000, queue: false});
+        ttl.animate({"height": "87px"}, {duration: animationLength});
+        solid.animate({"height":"100%", "max-width":"none", "width": "3000%"}, {duration: animationLength, queue: false});
+        footer.animate({"height": "10px"}, {duration: animationLength, queue: false});
+        triangles.css({"margin": "0", "width": "100%", "z-index": "3"}, {duration: animationLength, queue: false});
+        main.css({"margin": "auto", "width": "50px", "height": "50px"}, {duration: animationLength, queue: false});
     };
     const requestContent = file => {
         all.load(`${file} .all`);
