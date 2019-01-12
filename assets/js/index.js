@@ -16,13 +16,34 @@ $(document).ready(function(){
         triangles.css({"z-index": "3"});
         all.css({"height": `${all.height()}px`, "width": `${all.width()}px`}); //fixes width of content
         //animated changes
-        all.animate({"left": "-50%", "top": "-50%"}, {duration: animationLength-2000});
+        ttl.animate({"height": "87px"}, {duration: animationLength/4, start:});
+        solid.animate({"height":"100%", "max-width":"none", "width": "3000%"}, {duration: animationLength/4, queue: false});
+        footer.stop(true, true).delay(3000).animate({"height": "10px"}, {duration: animationLength/4, queue: false});
+        triangles.animate({"margin": "0", "width": "100%"}, {duration: animationLength/2, queue: false});
+        all.animate({"left": "-50%", "top": "-50%"}, {duration: animationLength/2});
+        main.animate({"left": "50%", "top": "50%", "transform":"translate(-50%, -50%)", "width": "50px", "height": "50px"}, {duration: animationLength/2, queue: false});
+    };
+    const animateIn = jQLink => {
+        const solid = jQLink.children(`.solid`);
+        const ttl = jQLink.children(`.ttl`);
+        //animated changes
+       
         ttl.animate({"height": "87px"}, {duration: animationLength-2000});
         solid.animate({"height":"100%", "max-width":"none", "width": "3000%"}, {duration: animationLength-4000, queue: false});
-        footer.delay(3000).animate({"height": "10px"}, {duration: animationLength-3000, queue: false});
+        footer.stop().delay(3000).animate({"height": "10px"}, {duration: animationLength-3000, queue: false});
         triangles.animate({"margin": "0", "width": "100%"}, {duration: animationLength-2000, queue: false});
+        all.animate({"left": "-50%", "top": "-50%"}, {duration: animationLength-2000});
         main.animate({"left": "50%", "top": "50%", "transform":"translate(-50%, -50%)", "width": "50px", "height": "50px"}, {duration: animationLength-2000, queue: false});
-    };
+        //instant changes
+        setTimeout(function(){
+            navLink.unbind('mouseenter mouseleave');
+            navLink.removeAttr("style")
+            jQLink.removeAttr("style")
+            triangles.removeAttr("style")
+            all.removeAttr("style"); 
+        }, animationLength);
+        //fixes width of content
+    }
     const requestContent = file => {
         all.load(`${file} .all`);
     };
