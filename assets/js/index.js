@@ -20,12 +20,11 @@ $(document).ready(function(){
             link.preventDefault();
             const data = link.target.getAttribute('data-href');
             const url = link.target.href;
-            console.log('this', this);
             console.log('link', link);
             console.log('target', link.target);
             console.log('solid-div', link.target.children(`#${data}-solid`));
-            alert($(`#${link.target.id}`).children(`#${data}-solid`).id);
-            $(`#${link.target.id}`).children(`#${data}-solid`).css({"background-color": "blue"});
+            alert($(`#${link.target.id}`).children[`${data}-solid`].id);
+            //$(`#${link.target.id}`).children(`#${data}-solid`).css({"background-color": "blue"});
             //animateOut(link.target);
             //setTimeout(function(){
             requestContent(url);
