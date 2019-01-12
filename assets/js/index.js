@@ -20,7 +20,11 @@ $(document).ready(function(){
             link.preventDefault();
             const data = link.target.getAttribute('data-href');
             const url = link.target.href;
-            animateOut(link.target);
+            console.log('this', this);
+            console.log('link', link);
+            console.log('target', link.target);
+            console.log('solid-div', link.target.children(`#${data}-solid`));
+            //animateOut(link.target);
             //setTimeout(function(){
             requestContent(url);
             history.pushState(data, null, url);
