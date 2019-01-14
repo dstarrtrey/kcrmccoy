@@ -228,7 +228,7 @@ footer{
     box-sizing: border-box;
     margin: 0 25px 25px 0;
     width: 500px;
-    height: 500px;
+    height: auto;
 }
 .lego-slideshow{
     text-align: center;
