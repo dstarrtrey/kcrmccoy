@@ -102,25 +102,7 @@ $(document).ready(function(){
             }, animationLength/2);
         }
     };
-    const photos = [];
-    $.ajax({
-        url: "https://api.flickr.com/services/rest/?api_key=9838075b647ec1a2393ba502cb82c148&gallery_id=72157677715358868&method=flickr.galleries.getPhotos&format=json&nojsoncallback=1",
-        method: "GET", 
-      }).then(function(response){
-          photos = response.photos.photo;
-    });
-    const legoSlideshow = () =>{
-        let i = 0;
-        setInterval(function(){
-            let currentPhoto = photos[i];
-            $("#current-image").attr("src", `http://farm${currentPhoto.farm}.staticflickr.com/${currentPhoto.server}/${currentPhoto.id}_${currentPhoto.secret}.jpg`);
-            if(i===photos.length-1){
-                i = 0;
-            }else{
-                i++;
-            }
-        }, 3000);
-    };
+    
     navLink.hover(function() {
             $(`#${this.id}-ttl`).removeClass( "text-off" );
             $(`#${this.id}-img`).removeClass( "img-off" );
@@ -145,9 +127,6 @@ $(document).ready(function(){
         }
         //clickedElement.stopPropogation();
         loadPage(clickedElement);
-    });
-    $("#current-image").on("load", function(){
-        legoSlideshow();
     });
     
 });
