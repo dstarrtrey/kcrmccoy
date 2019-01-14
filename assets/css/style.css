@@ -44,6 +44,10 @@ p{
     font-family: geosanslight;
     text-align: left;
 }
+sup { 
+    vertical-align: super;
+    font-size: smaller;
+  }
 .casey{
     font-family: future;
     font-size: 60px;
