@@ -102,6 +102,7 @@ $(document).ready(function(){
             }, animationLength/2);
         }
     };
+    const photos = [];
     $.ajax({
         url: "https://api.flickr.com/services/rest/?api_key=9838075b647ec1a2393ba502cb82c148&gallery_id=72157677715358868&method=flickr.galleries.getPhotos&format=json&nojsoncallback=1",
         method: "GET", 
@@ -148,5 +149,5 @@ $(document).ready(function(){
     $("#current-image").on("load", function(){
         legoSlideshow();
     });
-    const photos = [];
+    
 });
