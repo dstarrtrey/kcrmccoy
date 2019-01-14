@@ -223,6 +223,13 @@ footer{
     bottom: 0;
     right: 0;
 }
+.slideshow{
+    border: 3px double black;
+    box-sizing: border-box;
+    margin: 0 25px 25px 0;
+    width: 500px;
+    height: 500px;
+}
 .lego-slideshow{
     text-align: center;
     float: left;
