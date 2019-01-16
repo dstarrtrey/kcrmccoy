@@ -74,7 +74,7 @@ $(document).ready(function(){
         //fixes width of content
     }
     const requestContent = (file, data) => {
-        main.load(`${file} .all`, function(){
+        main.load(`${file} main`, function(){
             if(data==="lego"){
                 console.log("executing:");
                 let photos = [];
