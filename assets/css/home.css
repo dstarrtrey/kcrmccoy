@@ -138,9 +138,10 @@ footer:before{
     }
     .art{
         text-align: center;
+        width: 50%;
     }
     .circle{
-        width: 150px;
+        width: 100%;
     }
     .link-label{
         line-height: 150px;
