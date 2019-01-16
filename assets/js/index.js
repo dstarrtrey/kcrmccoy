@@ -74,7 +74,33 @@ $(document).ready(function(){
         //fixes width of content
     }
     const requestContent = file => {
-        all.load(`${file} .all`);
+        all.load(`${file} .all`).then(function(){
+            if(file==="lego.html"){
+                console.log("executing:");
+                let photos = [];
+                const legoSlideshow = () =>{
+                    let i = 0;
+                    console.log(photos);
+                    setInterval(function(){
+                        let currentPhoto = photos[i];
+                        $("#current-image").attr("src", `http://farm${currentPhoto.farm}.staticflickr.com/${currentPhoto.server}/${currentPhoto.id}_${currentPhoto.secret}.jpg`);
+                        if(i===photos.length-1){
+                            i = 0;
+                        }else{
+                            i++;
+                        }
+                    }, 3000);
+                };
+                $.ajax({
+                    url: "https://api.flickr.com/services/rest/?api_key=9838075b647ec1a2393ba502cb82c148&gallery_id=72157677715358868&method=flickr.galleries.getPhotos&format=json&nojsoncallback=1",
+                    method: "GET", 
+                }).then(function(response){
+                    console.log(response);
+                    photos = response.photos.photo;
+                    legoSlideshow();
+                });
+            }
+        });
     };
     const loadPage = link => {
         while (link.target && !link.target.href) {
@@ -84,8 +110,8 @@ $(document).ready(function(){
             link.preventDefault();
             const data = link.target.getAttribute('data-href');
             const url = link.target.href;
-            console.log('link', link);
             console.log('target', link.target);
+            console.log('url', url);
             navLink.removeClass("active");
             $(`#${link.target.id}`).addClass("active");
             console.log($(`#${link.target.id}`));
@@ -120,7 +146,7 @@ $(document).ready(function(){
             $(`#${this.id}-solid`).removeClass( "solid-hover" );
         }
     );
-    links.on("click", function(clickedElement) {
+    $(document).on("click", ".links", function(clickedElement) {
         console.log("triggered");
         let target = clickedElement.target;
         if (target) {
