@@ -194,6 +194,7 @@ footer{
     font-size: 15px;
 }
 .footer-links span{
+    font-family: geosanslight;
     position: absolute;
     top: 5px;
     right: 50%;
