@@ -24,10 +24,7 @@ main{
     margin: 0;
     overflow: hidden;
 }
-.all{
-    position: relative;
-    padding: 0 10%;
-}
+
 header{
     overflow: hidden;
     position: relative;
@@ -162,6 +159,8 @@ h2{
     filter: grayscale(100%);
 }
 .content{
+    position: relative;
+    padding: 0 10%;
     max-width: 1200px;
     margin: auto;
 }
@@ -358,7 +357,7 @@ footer{
         width: 100%;
         margin: auto;
     }
-    .all{
+    .content{
         padding: 0;
     }
 }
