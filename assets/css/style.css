@@ -75,6 +75,7 @@ p a:hover{
 
 }
 h2{
+    padding-left: 10%;
     margin: 15px 0 25px 0;
     font-family: vinegar;
     font-size: 45px;
@@ -312,6 +313,7 @@ footer{
     }
     h2{
         text-align: center;
+        padding: 0;
     }
     
     .lego-slideshow{
