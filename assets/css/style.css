@@ -242,13 +242,14 @@ footer{
 }
 .slideshow{
     box-sizing: border-box;
-    margin: 0 25px 25px 0;
+    margin: auto;
     width: auto;
     height: 100%;
     max-width: 500px;
     max-height: 313px;
 }
 .lego-slideshow{
+    background-image: url(../images/positive.png);
     text-align: center;
     float: left;
     width: 506px;
