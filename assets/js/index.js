@@ -73,9 +73,9 @@ $(document).ready(function(){
         }, animationLength);
         //fixes width of content
     }
-    const requestContent = file => {
+    const requestContent = (file, data) => {
         all.load(`${file} .all`, function(){
-            if(file==="lego.html"){
+            if(data==="lego"){
                 console.log("executing:");
                 let photos = [];
                 const legoSlideshow = () =>{
@@ -110,13 +110,13 @@ $(document).ready(function(){
             link.preventDefault();
             const data = link.target.getAttribute('data-href');
             const url = link.target.href;
-            console.log('target', link.target);
+            console.log('data', link.data);
             console.log('url', url);
             navLink.removeClass("active");
             $(`#${link.target.id}`).addClass("active");
             console.log($(`#${link.target.id}`));
             //animateOut($(`#${link.target.id}`));
-            requestContent(url);
+            requestContent(url, data);
             history.pushState(data, null, url);
             // setTimeout(function(){
             //     main.addClass("spin");
