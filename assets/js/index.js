@@ -89,17 +89,18 @@ $(document).ready(function(){
             navLink.removeClass("active");
             $(`#${link.target.id}`).addClass("active");
             console.log($(`#${link.target.id}`));
-            animateOut($(`#${link.target.id}`));
-            
-            setTimeout(function(){
-                main.addClass("spin");
-                setTimeout(function(){
-                    requestContent(url);
-                    history.pushState(data, null, url);
-                    animateIn($(`#${link.target.id}`));
-                    main.removeClass("spin");
-                }, 2500);
-            }, animationLength/2);
+            //animateOut($(`#${link.target.id}`));
+            requestContent(url);
+            history.pushState(data, null, url);
+            // setTimeout(function(){
+            //     main.addClass("spin");
+            //     setTimeout(function(){
+            //         requestContent(url);
+            //         history.pushState(data, null, url);
+            //         animateIn($(`#${link.target.id}`));
+            //         main.removeClass("spin");
+            //     }, 2500);
+            // }, animationLength/2);
         }
     };
     
