@@ -245,14 +245,14 @@ footer{
     margin: 0 25px 25px 0;
     width: auto;
     height: 100%;
-    max-width: 800px;
-    max-height: 500px;
+    max-width: 500px;
+    max-height: 313px;
 }
 .lego-slideshow{
     text-align: center;
     float: left;
-    width: 806px;
-    height: 506px;
+    width: 506px;
+    height: 319px;
     border: 3px double black;
     box-sizing: border-box;
     margin: 0 25px 25px 0;
