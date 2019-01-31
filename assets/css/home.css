@@ -83,8 +83,8 @@ img{
     line-height: 300px;
     text-align: center;
     opacity: 0;
-    color: white;
-    text-shadow: 2px 2px 3px black;
+    color: #000000;
+    text-shadow: 2px 2px 3px #ffffff;
     font-family: vinegar;
     font-size: 40px;
     z-index: 3;
