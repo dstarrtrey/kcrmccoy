@@ -28,6 +28,7 @@ main{
 }
 
 header{
+    border-bottom: 4px solid #ffffff;
     background-color: #B5B5B5;
     overflow: hidden;
     position: relative;
@@ -88,7 +89,7 @@ h2{
 }
 .title-link{
     text-decoration: none;
-    color: #ffffff;
+    color: #000000;
 }
 .casey:hover{
     transform: scale(1.05);
@@ -118,7 +119,7 @@ h2{
     padding: 0;
     overflow: hidden;
     font-family: vinegar;
-    color: #ffffff;
+    color: #000000;
     display: table-cell;
     vertical-align: bottom;
     text-align: center;
