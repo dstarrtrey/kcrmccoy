@@ -52,15 +52,13 @@
             <div class="all">
                 <h2>LEGO</h2>
                 <div class="content">
-                    <div class="lego-slideshow">
+                    <div class="flickr-slideshow">
                         <!-- <a data-flickr-embed="true" data-header="true" data-footer="true"  href="https://www.flickr.com/photos/kcrmccoy/albums/72157695739057202" title="kcrmccoy.com slideshow"><img src="https://farm5.staticflickr.com/4771/27118616118_8736cb07f7_c.jpg" width="400px" height="auto" alt="kcrmccoy.com slideshow"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script> -->
                         <a href="https://www.flickr.com/photos/kcrmccoy/albums/72157695739057202" title="kcrmccoy.com slideshow"><img class="slideshow" id="current-image" src="assets/images/lego.jpg"></a>
                         <script>
-                            console.log("executing:");
                             let photos = [];
                             const legoSlideshow = () =>{
                                 let i = 0;
-                                console.log(photos);
                                 setInterval(function(){
                                     let currentPhoto = photos[i];
                                     $("#current-image").attr("src", `http://farm${currentPhoto.farm}.staticflickr.com/${currentPhoto.server}/${currentPhoto.id}_${currentPhoto.secret}.jpg`);
@@ -75,7 +73,6 @@
                                 url: "https://api.flickr.com/services/rest/?api_key=9838075b647ec1a2393ba502cb82c148&gallery_id=72157677715358868&method=flickr.galleries.getPhotos&format=json&nojsoncallback=1",
                                 method: "GET", 
                             }).then(function(response){
-                                console.log(response);
                                 photos = response.photos.photo;
                                 legoSlideshow();
                             });

@@ -254,7 +254,7 @@ footer{
     max-width: 500px;
     max-height: 313px;
 }
-.lego-slideshow{
+.flickr-slideshow{
     background-image: url(../images/positive.png);
     text-align: center;
     float: left;
@@ -320,7 +320,7 @@ footer{
         padding: 0;
     }
     
-    .lego-slideshow{
+    .flickr-slideshow{
         width: 100%;
         margin: auto;
     }
@@ -351,7 +351,7 @@ footer{
     p{
         text-align: center;
     }
-    .lego-slideshow{
+    .flickr-slideshow{
         max-width: 100%;
     }
     .slideshow{
