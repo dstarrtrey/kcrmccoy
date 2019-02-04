@@ -1,2 +1,2 @@
-# kcrmccoy
-Repo for Casey's commissioned website in progress
+# kcrmccoy.com
+Repo for Casey McCoy's commissioned website in progress
