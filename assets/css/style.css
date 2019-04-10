@@ -262,7 +262,15 @@ footer{
     height: 319px;
     border: 3px double #ffffff;
     box-sizing: border-box;
+}
+.lego-slideshow{
     margin: 0 25px 25px 0;
+}
+.art-slideshow{
+    margin: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 .about-pic{
     width: 35%;

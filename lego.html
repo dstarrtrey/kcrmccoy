@@ -2,118 +2,183 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en-us"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>LEGO</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="assets/css/reset.css">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>    
-        <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
-    </head>
-    <body>
-        <!--[if lt IE 7]>
+<!--[if gt IE 8]><!-->
+<html lang="en-us">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>LEGO</title>
+    <meta name="description" content="Portfolio site for Casey McCoy">
+    <link rel=icon href="favicon-kcrmccoy.com.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+</head>
+
+<body>
+    <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <header>
-            <span class="casey"><a href="index.html" class="title-link">CASEY MCCOY</a></span>
-            <div class="links">
-                <a href="about.html" class="inactive nav-link" id="about" data-href="about">
-                    <img src="assets/images/profile.jpg" alt="About Me" class="nav-img img-off" id="about-img">
-                    <div class="subtitle text-off" id="about-ttl">About Me</div>
-                    <div class="solid solid-off" id="about-solid"></div>
-                </a>
-                <a href="music.html" class="inactive nav-link" id="music" data-href="music">
-                    <img src="assets/images/wio.jpg" alt="music" class="nav-img img-off" id="music-img">
-                    <div class="subtitle text-off" id="music-ttl">Music</div>
-                    <div class="solid solid-off" id="music-solid"></div>
-                </a>
-                <a href="art.html" class="inactive nav-link" id="art" data-href="art">
-                    <img src="assets/images/art.png" alt="art PICO" class="nav-img img-off" id="art-img">
-                    <div class="subtitle text-off" id="art-ttl">Art</div>
-                    <div class="solid solid-off" id="art-solid"></div>
-                </a>
-                <a href="lego.html" class="active nav-link" id="lego" data-href="lego">
-                    <img src="assets/images/lego.jpg" alt="Lego" class="nav-img img-off" id="lego-img">
-                    <div class="subtitle text-off" id="lego-ttl">LEGO</div>
-                    <div class="solid solid-off" id="lego-solid"></div>
-                </a>
-                <a href="studioPICO.html" class="inactive nav-link" id="studioPICO" data-href="studioPICO">
-                    <img src="assets/images/picos.png" alt="Studio PICO" class="nav-img img-off" id="studioPICO-img">
-                    <div class="subtitle text-off" id="studioPICO-ttl">Studio PICO</div>
-                    <div class="solid solid-off" id="studioPICO-solid"></div>
-                </a>
-            </div>
-        </header>
-        <main>
-            
-            <div class="all">
-                <h2>LEGO</h2>
-                <div class="content">
-                    <div class="flickr-slideshow">
-                        <!-- <a data-flickr-embed="true" data-header="true" data-footer="true"  href="https://www.flickr.com/photos/kcrmccoy/albums/72157695739057202" title="kcrmccoy.com slideshow"><img src="https://farm5.staticflickr.com/4771/27118616118_8736cb07f7_c.jpg" width="400px" height="auto" alt="kcrmccoy.com slideshow"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script> -->
-                        <a href="https://www.flickr.com/photos/kcrmccoy/albums/72157695739057202" title="kcrmccoy.com slideshow"><img class="slideshow" id="current-image" src="assets/images/lego.jpg"></a>
-                        <script>
-                            // Initialize Firebase
-                            const config = {
-                                apiKey: "AIzaSyDgYkyk5r6xSfgffEHbjCvSYuEdJwm8wyA",
-                                authDomain: "kcrmccoy-72b5e.firebaseapp.com",
-                                databaseURL: "https://kcrmccoy-72b5e.firebaseio.com",
-                                projectId: "kcrmccoy-72b5e",
-                                storageBucket: "kcrmccoy-72b5e.appspot.com",
-                                messagingSenderId: "145673241657"
-                            };
-                            firebase.initializeApp(config);
-                            const database = firebase.database();
-                            let key = "";
-                            let photos = [];
-                            const legoSlideshow = () =>{
-                                let i = 0;
-                                setInterval(function(){
-                                    let currentPhoto = photos[i];
-                                    $("#current-image").attr("src", `http://farm${currentPhoto.farm}.staticflickr.com/${currentPhoto.server}/${currentPhoto.id}_${currentPhoto.secret}.jpg`);
-                                    if(i===photos.length-1){
-                                        i = 0;
-                                    }else{
-                                        i++;
-                                    }
-                                }, 3000);
-                            };
-                            database.ref().on("value", async function(snapshot){
-                                key = snapshot.val().flickrAPIKey;
-                                $.ajax({
-                                    url: "https://api.flickr.com/services/rest/?api_key=" + key + "&gallery_id=72157677715358868&method=flickr.galleries.getPhotos&format=json&nojsoncallback=1",
-                                    method: "GET", 
-                                }).then(function(response){
-                                    photos = response.photos.photo;
-                                    legoSlideshow();
+    <header>
+        <span class="casey"><a href="index.html" class="title-link">CASEY MCCOY</a></span>
+        <div class="links">
+            <a href="about.html" class="inactive nav-link" id="about" data-href="about">
+                <img src="assets/images/profile.jpg" alt="About Me" class="nav-img img-off" id="about-img">
+                <div class="subtitle text-off" id="about-ttl">About Me</div>
+                <div class="solid solid-off" id="about-solid"></div>
+            </a>
+            <a href="music.html" class="inactive nav-link" id="music" data-href="music">
+                <img src="assets/images/wio.jpg" alt="music" class="nav-img img-off" id="music-img">
+                <div class="subtitle text-off" id="music-ttl">Music</div>
+                <div class="solid solid-off" id="music-solid"></div>
+            </a>
+            <a href="art.html" class="inactive nav-link" id="art" data-href="art">
+                <img src="assets/images/art.png" alt="art PICO" class="nav-img img-off" id="art-img">
+                <div class="subtitle text-off" id="art-ttl">Art</div>
+                <div class="solid solid-off" id="art-solid"></div>
+            </a>
+            <a href="lego.html" class="active nav-link" id="lego" data-href="lego">
+                <img src="assets/images/lego.jpg" alt="Lego" class="nav-img img-off" id="lego-img">
+                <div class="subtitle text-off" id="lego-ttl">LEGO</div>
+                <div class="solid solid-off" id="lego-solid"></div>
+            </a>
+            <a href="studioPICO.html" class="inactive nav-link" id="studioPICO" data-href="studioPICO">
+                <img src="assets/images/picos.png" alt="Studio PICO" class="nav-img img-off" id="studioPICO-img">
+                <div class="subtitle text-off" id="studioPICO-ttl">Studio PICO</div>
+                <div class="solid solid-off" id="studioPICO-solid"></div>
+            </a>
+        </div>
+    </header>
+    <main>
+
+        <div class="all">
+            <h2>LEGO</h2>
+            <div class="content">
+                <div class="flickr-slideshow lego-slideshow">
+                    <!-- <a data-flickr-embed="true" data-header="true" data-footer="true"  href="https://www.flickr.com/photos/kcrmccoy/albums/72157695739057202" title="kcrmccoy.com slideshow"><img src="https://farm5.staticflickr.com/4771/27118616118_8736cb07f7_c.jpg" width="400px" height="auto" alt="kcrmccoy.com slideshow"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script> -->
+                    <a href="https://www.flickr.com/photos/kcrmccoy/albums/72157695739057202"
+                        title="kcrmccoy.com slideshow"><img class="slideshow" id="current-image"
+                            src="assets/images/lego.jpg"></a>
+                    <script>
+                        // Initialize Firebase
+                        const config = {
+                            apiKey: "AIzaSyDgYkyk5r6xSfgffEHbjCvSYuEdJwm8wyA",
+                            authDomain: "kcrmccoy-72b5e.firebaseapp.com",
+                            databaseURL: "https://kcrmccoy-72b5e.firebaseio.com",
+                            projectId: "kcrmccoy-72b5e",
+                            storageBucket: "kcrmccoy-72b5e.appspot.com",
+                            messagingSenderId: "145673241657"
+                        };
+                        firebase.initializeApp(config);
+                        const database = firebase.database();
+                        let key = "";
+                        let photos = [];
+                        const legoSlideshow = () => {
+                            let i = 0;
+                            setInterval(function () {
+                                let currentPhoto = photos[i];
+                                $("#current-image").attr("src", `http://farm${currentPhoto.farm}.staticflickr.com/${currentPhoto.server}/${currentPhoto.id}_${currentPhoto.secret}.jpg`);
+                                if (i === photos.length - 1) {
+                                    i = 0;
+                                } else {
+                                    i++;
+                                }
+                            }, 3000);
+                        };
+                        database.ref().on("value", async function (snapshot) {
+                            key = snapshot.val().flickrAPIKey;
+                            $.ajax({
+                                url: "https://api.flickr.com/services/rest/?api_key=" + key + "&gallery_id=72157677715358868&method=flickr.galleries.getPhotos&format=json&nojsoncallback=1",
+                                method: "GET",
+                            }).then(function (response) {
+                                photos = response.photos.photo;
+                                legoSlideshow();
                             });
-                            });
-                        </script>
-                    </div>
-                    <div class="bio">
-                        <p>I’ve been building with Lego ever since I could put two Duplo bricks together. I got sucked into the world of Lego art at a young age through a Lego podcast (LAMLradio) and a Bionicle forum (BZPower). Ever since I’ve been building and couldn’t put it down.</p>
-                        <p>Since joining the online Lego community in 2009, I’ve been a lifelong member of the Chicago Area Lego Users Group (ChiLUG); a presenter, head judge, and Cinema Coordinator for Brickworld Chicago; and an infrequent user of various Lego forums.</p>
-                        <p>I ran the blog MosaicBricks from 2010-2013. I’ve been featured in blogs such as The Brothers Brick<sup><a href="https://www.brothers-brick.com/2017/08/19/last-rest-stop-tattooine/">1</a></sup><sup><a href="https://www.brothers-brick.com/2018/09/08/stranger-things-teen-line-up/">2</a></sup><sup><a href="https://www.brothers-brick.com/2018/08/12/stranger-things-served-with-lego-and-eggo/">3</a></sup><sup><a href="https://www.brothers-brick.com/2013/06/09/three-two-one-go/">4</a></sup><sup><a href="https://www.brothers-brick.com/2014/07/09/the-princess-bride-collaborative/">5</a></sup>, BrickNerd<sup><a href="http://bricknerd.com/home/stranger-thingz-30-2018">1</a></sup><sup><a href="http://bricknerd.com/home/stranger-teens-5-2018">2</a></sup><sup><a href="http://bricknerd.com/home/bennys-homestead-13-2017">3</a></sup>, and the <a href="https://news.avclub.com/celebrate-romance-with-detailed-lego-versions-of-famous-1798270147">AV Club</a>; been featured on Youtube channels such as The BrickVault<sup><a href="https://www.youtube.com/watch?v=WNUZ5PyjGhI">1</a></sup><sup><a href="https://www.youtube.com/watch?v=hrvaN9r3BOU">2</a></sup>, Beyond the Brick<sup><a href="https://www.youtube.com/watch?v=1BVLdycNnq0">1</a></sup><sup><a href=" https://www.youtube.com/watch?v=seWMr2cn_as">2</a></sup><sup><a href="https://www.youtube.com/watch?v=q3cFyeuGDoE">3</a></sup><sup><a href="https://www.youtube.com/watch?v=nkraeqRpBjA">4</a></sup>, and BrickinNick<sup><a href="https://www.youtube.com/watch?v=vSAJZQlq-8M">1</a></sup><sup><a href="https://www.youtube.com/watch?v=1-LklUWCUyw">2</a></sup><sup><a href="https://www.youtube.com/watch?v=CW6Ai66cLyo">3</a></sup>; and interviewed by the <a href="https://www.dailyherald.com/business/20180507/lego-obsessed-crowd-packs-convention-every-june-in-schaumburg">Associated Press</a>.</p>
-                        <p>I also make stop-motion animation films under the name Studio PICO and have won Best Film 2014-2017 and Most Popular Film 2014-2015 at Brickworld Chicago.</p>
-                        <p>I don’t have a particular theme or building style that I stick to. My favorite Lego theme to date, however, is Forestmen. Check out the slideshow to the left to see some example work or visit my <a href="https://www.flickr.com/photos/kcrmccoy">Flickr</a> and <a href="https://www.instagram.com/kcrmccoy">Instagram</a> to see more.</p>
-                    </div>
+                        });
+                    </script>
                 </div>
+                <div class="bio">
+                    <p>I’ve been building with Lego ever since I could put two Duplo bricks together. I got sucked into
+                        the world of Lego art at a young age through a Lego podcast (LAMLradio) and a Bionicle forum
+                        (BZPower). Ever since I’ve been building and couldn’t put it down.</p>
+                    <p>Since joining the online Lego community in 2009, I’ve been a lifelong member of the Chicago Area
+                        Lego Users Group (ChiLUG); a presenter, head judge, and Cinema Coordinator for Brickworld
+                        Chicago; and an infrequent user of various Lego forums.</p>
+                    <p>I ran the blog MosaicBricks from 2010-2013. I’ve been featured in blogs such as The Brothers
+                        Brick<sup><a
+                                href="https://www.brothers-brick.com/2017/08/19/last-rest-stop-tattooine/">1</a></sup><sup><a
+                                href="https://www.brothers-brick.com/2018/09/08/stranger-things-teen-line-up/">2</a></sup><sup><a
+                                href="https://www.brothers-brick.com/2018/08/12/stranger-things-served-with-lego-and-eggo/">3</a></sup><sup><a
+                                href="https://www.brothers-brick.com/2013/06/09/three-two-one-go/">4</a></sup><sup><a
+                                href="https://www.brothers-brick.com/2014/07/09/the-princess-bride-collaborative/">5</a></sup>,
+                        BrickNerd<sup><a href="http://bricknerd.com/home/stranger-thingz-30-2018">1</a></sup><sup><a
+                                href="http://bricknerd.com/home/stranger-teens-5-2018">2</a></sup><sup><a
+                                href="http://bricknerd.com/home/bennys-homestead-13-2017">3</a></sup>, and the <a
+                            href="https://news.avclub.com/celebrate-romance-with-detailed-lego-versions-of-famous-1798270147">AV
+                            Club</a>; been featured on Youtube channels such as The BrickVault<sup><a
+                                href="https://www.youtube.com/watch?v=WNUZ5PyjGhI">1</a></sup><sup><a
+                                href="https://www.youtube.com/watch?v=hrvaN9r3BOU">2</a></sup>, Beyond the Brick<sup><a
+                                href="https://www.youtube.com/watch?v=1BVLdycNnq0">1</a></sup><sup><a
+                                href=" https://www.youtube.com/watch?v=seWMr2cn_as">2</a></sup><sup><a
+                                href="https://www.youtube.com/watch?v=q3cFyeuGDoE">3</a></sup><sup><a
+                                href="https://www.youtube.com/watch?v=nkraeqRpBjA">4</a></sup>, and BrickinNick<sup><a
+                                href="https://www.youtube.com/watch?v=vSAJZQlq-8M">1</a></sup><sup><a
+                                href="https://www.youtube.com/watch?v=1-LklUWCUyw">2</a></sup><sup><a
+                                href="https://www.youtube.com/watch?v=CW6Ai66cLyo">3</a></sup>; and interviewed by the
+                        <a
+                            href="https://www.dailyherald.com/business/20180507/lego-obsessed-crowd-packs-convention-every-june-in-schaumburg">Associated
+                            Press</a>.</p>
+                    <p>I also make stop-motion animation films under the name Studio PICO and have won Best Film
+                        2014-2017 and Most Popular Film 2014-2015 at Brickworld Chicago.</p>
+                    <p>I don’t have a particular theme or building style that I stick to. My favorite Lego theme to
+                        date, however, is Forestmen. Check out the slideshow to the left to see some example work or
+                        visit my <a href="https://www.flickr.com/photos/kcrmccoy">Flickr</a> and <a
+                            href="https://www.instagram.com/kcrmccoy">Instagram</a> to see more.</p>
+                </div>
+                <style>
+                    a:link {
+                        color: #888888;
+                    }
+
+                    /* visited link */
+                    a:visited {
+                        color: #444444;
+                    }
+
+                    /* mouse over link */
+                    a:hover {
+                        color: #e9e9e9;
+                    }
+
+                    /* selected link */
+                    a:active {
+                        color: #e4e4e4;
+                    }
+                </style>
             </div>
-            
-        </main>
-        <footer>
-            <div class="footer-links">
-                <a class="flickr" href="http://www.flickr.com/people/kcrmccoy"><img src="assets/images/icons/flickr.png"><span>flickr.com/people/kcrmccoy</span></a>
-                <a class="instagram" href="#"><img src="assets/images/icons/instagram.png"><span>@kcrmccoy</span></a>
-                <a class="youtube" href="#"><img src="assets/images/icons/youtube.png"><span>undeclared</span></a>
-                <a class="linkedin" href="#"><img src="assets/images/icons/linkedin.png"><span>linkedin.com/in/kcrmccoy</span></a>
-            </div>
-            <div class="bottom">Copyright Casey McCoy 2019. LEGO® is a trademark of the LEGO Group which does not sponsor, authorize or endorse this site. Website design by David Starr.</div>
-        </footer>
-        <script src="assets/js/index.js" async defer></script>
-    </body>
+        </div>
+
+    </main>
+    <footer>
+        <div class="footer-links">
+            <a class="flickr" href="http://www.flickr.com/people/kcrmccoy"><img
+                    src="assets/images/icons/flickr.png"><span>flickr.com/people/kcrmccoy</span></a>
+            <a class="instagram" href="http://www.instagram.com/kcrmccoy"><img
+                    src="assets/images/icons/instagram.png"><span>@kcrmccoy</span></a>
+            <a class="youtube" href="#"><img src="assets/images/icons/youtube.png"><span>undeclared</span></a>
+            <a class="linkedin" href="http://www.linkedin.com/in/kcrmccoy/"><img
+                    src="assets/images/icons/linkedin.png"><span>linkedin.com/in/kcrmccoy</span></a>
+        </div>
+        <div class="bottom">Copyright Casey McCoy 2019. LEGO® is a trademark of the LEGO Group which does not sponsor,
+            authorize or endorse this site. Website design by David Starr.</div>
+    </footer>
+    <script src="assets/js/index.js" async defer></script>
+</body>
+
 </html>

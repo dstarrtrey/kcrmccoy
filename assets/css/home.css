@@ -104,8 +104,9 @@ footer:before{
     border: none;
 }
 .sm-link:hover{
-    filter: invert(20%)
+    filter: invert(20%);
 }
+
 @media screen and (max-width: 900px){
     .container{
         grid-template-areas: 

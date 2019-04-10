@@ -2,81 +2,111 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en-us"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Studio PICO</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="assets/css/reset.css">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="stylesheet" href="assets/css/studio.css">
-        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>    
-        <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
-    </head>
-    <body>
-        <!--[if lt IE 7]>
+<!--[if gt IE 8]><!-->
+<html lang="en-us">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Studio PICO</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/studio.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.2/firebase.js"></script>
+</head>
+
+<body>
+    <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <header>
-            <span class="casey"><a href="index.html" class="title-link">CASEY MCCOY</a></span>
-            <div class="links">
-                <a href="about.html" class="inactive nav-link" id="about" data-href="about">
-                    <img src="assets/images/profile.jpg" alt="About Me" class="nav-img img-off" id="about-img">
-                    <div class="subtitle text-off" id="about-ttl">About Me</div>
-                    <div class="solid solid-off" id="about-solid"></div>
-                </a>
-                <a href="music.html" class="inactive nav-link" id="music" data-href="music">
-                    <img src="assets/images/wio.jpg" alt="music" class="nav-img img-off" id="music-img">
-                    <div class="subtitle text-off" id="music-ttl">Music</div>
-                    <div class="solid solid-off" id="music-solid"></div>
-                </a>
-                <a href="art.html" class="inactive nav-link" id="art" data-href="art">
-                    <img src="assets/images/art.png" alt="art PICO" class="nav-img img-off" id="art-img">
-                    <div class="subtitle text-off" id="art-ttl">Art</div>
-                    <div class="solid solid-off" id="art-solid"></div>
-                </a>
-                <a href="lego.html" class="inactive nav-link" id="lego" data-href="lego">
-                    <img src="assets/images/lego.jpg" alt="Lego" class="nav-img img-off" id="lego-img">
-                    <div class="subtitle text-off" id="lego-ttl">LEGO</div>
-                    <div class="solid solid-off" id="lego-solid"></div>
-                </a>
-                <a href="studioPICO.html" class="active nav-link" id="studioPICO" data-href="studioPICO">
-                    <img src="assets/images/picos.png" alt="Studio PICO" class="nav-img img-off" id="studioPICO-img">
-                    <div class="subtitle text-off" id="studioPICO-ttl">Studio PICO</div>
-                    <div class="solid solid-off" id="studioPICO-solid"></div>
-                </a>
-            </div>
-        </header>
-        <main>
-            <div class="all">
-                <h2>Studio PICO</h2>
-                <div class="content">
-                    <img src="assets/images/picos.png" alt="Studio PICO" class="logo">
-                    <div class="bio">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae recusandae sint quia, amet optio vero, ea, itaque mollitia earum pariatur voluptas in officiis illum! Dolore officiis soluta esse quis aut.</p>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eos quis repellendus possimus dolore ipsam fugit placeat quod facere accusantium doloribus sunt nemo, autem, in odio officia ad? Optio, alias earum.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda nemo cum laborum temporibus ea harum velit aperiam expedita voluptatibus eius. Molestias atque corrupti suscipit ipsam sunt earum aliquam ex cupiditate!</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus nobis velit perferendis dolorem deleniti obcaecati consequuntur, ex quidem cupiditate fugiat et accusamus illum dicta consequatur unde laudantium molestiae doloribus dignissimos!</p>
-                    </div>    
-                    <div class="youtube-embeds">
-                        <iframe onload="this.style.height = '300px'" class="yt-iframe" src="https://www.youtube.com/embed/J7sfIsnNDEc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        <iframe onload="this.style.height = '300px'" class="yt-iframe" src="https://www.youtube.com/embed/CBkeN6M2zhY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        <iframe onload="this.style.height = '300px'" class="yt-iframe" src="https://www.youtube.com/embed/zafzoxrUmRM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
+    <header>
+        <span class="casey"><a href="index.html" class="title-link">CASEY MCCOY</a></span>
+        <div class="links">
+            <a href="about.html" class="inactive nav-link" id="about" data-href="about">
+                <img src="assets/images/profile.jpg" alt="About Me" class="nav-img img-off" id="about-img">
+                <div class="subtitle text-off" id="about-ttl">About Me</div>
+                <div class="solid solid-off" id="about-solid"></div>
+            </a>
+            <a href="music.html" class="inactive nav-link" id="music" data-href="music">
+                <img src="assets/images/wio.jpg" alt="music" class="nav-img img-off" id="music-img">
+                <div class="subtitle text-off" id="music-ttl">Music</div>
+                <div class="solid solid-off" id="music-solid"></div>
+            </a>
+            <a href="art.html" class="inactive nav-link" id="art" data-href="art">
+                <img src="assets/images/art.png" alt="art PICO" class="nav-img img-off" id="art-img">
+                <div class="subtitle text-off" id="art-ttl">Art</div>
+                <div class="solid solid-off" id="art-solid"></div>
+            </a>
+            <a href="lego.html" class="inactive nav-link" id="lego" data-href="lego">
+                <img src="assets/images/lego.jpg" alt="Lego" class="nav-img img-off" id="lego-img">
+                <div class="subtitle text-off" id="lego-ttl">LEGO</div>
+                <div class="solid solid-off" id="lego-solid"></div>
+            </a>
+            <a href="studioPICO.html" class="active nav-link" id="studioPICO" data-href="studioPICO">
+                <img src="assets/images/picos.png" alt="Studio PICO" class="nav-img img-off" id="studioPICO-img">
+                <div class="subtitle text-off" id="studioPICO-ttl">Studio PICO</div>
+                <div class="solid solid-off" id="studioPICO-solid"></div>
+            </a>
+        </div>
+    </header>
+    <main>
+        <div class="all">
+            <h2>Studio PICO</h2>
+            <div class="content">
+                <img src="assets/images/picos.png" alt="Studio PICO" class="logo">
+                <div class="bio">
+                    <p>Studio PICO is an independent Lego stop-motion animation channel I started in 2019 as a
+                        collection of my Lego
+                        stop-motion animation films I’ve made either for school or for the Brickworld Film Festival.</p>
+                    <p>I got started in stop-motion animation after watching countless videos on Youtube in the early
+                        2010s and felt inspired
+                        to start making my own. What was just experimenting with a 240p webcam and some minifigures led
+                        to full 5 minute
+                        features for film festivals.
+                    </p>
+                    <p>My films have taken home 2014 Best Film, 2014 Most Popular Film, 2015 Best Film, 2015 Most
+                        Popular Film, 2016 Best Film,
+                        2017 Best Film at Brickworld Chicago.</p>
+                    <p>As a result, I now am one of the Cinema Co-Coordinators for Brickworld Chicago. If you’re
+                        interested in the film
+                        festival, please visit <a href="https://brickworld.com/brickfilm-festival/">Brickworld's
+                            website</a></p>
+                </div>
+                <div class="youtube-embeds">
+                    <iframe onload="this.style.height = '300px'" class="yt-iframe"
+                        src="https://www.youtube.com/embed/J7sfIsnNDEc" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                    <iframe onload="this.style.height = '300px'" class="yt-iframe"
+                        src="https://www.youtube.com/embed/CBkeN6M2zhY" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                    <iframe onload="this.style.height = '300px'" class="yt-iframe"
+                        src="https://www.youtube.com/embed/zafzoxrUmRM" frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
                 </div>
             </div>
-        </main>
-        <footer>
-            <div class="footer-links">
-                <a class="flickr" href="http://www.flickr.com/people/kcrmccoy"><img src="assets/images/icons/flickr.png"><span>flickr.com/people/kcrmccoy</span></a>
-                <a class="instagram" href="#"><img src="assets/images/icons/instagram.png"><span>@kcrmccoy</span></a>
-                <a class="youtube" href="#"><img src="assets/images/icons/youtube.png"><span>undeclared</span></a>
-                <a class="linkedin" href="#"><img src="assets/images/icons/linkedin.png"><span>linkedin.com/in/kcrmccoy</span></a>
-            </div>
-            <div class="bottom">Copyright Casey McCoy 2019. LEGO® is a trademark of the LEGO Group which does not sponsor, authorize or endorse this site. Website design by David Starr.</div>
-        </footer>
-        <script src="assets/js/index.js" async defer></script>
-    </body>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-links">
+            <a class="flickr" href="http://www.flickr.com/people/kcrmccoy"><img
+                    src="assets/images/icons/flickr.png"><span>flickr.com/people/kcrmccoy</span></a>
+            <a class="instagram" href="#"><img src="assets/images/icons/instagram.png"><span>@kcrmccoy</span></a>
+            <a class="youtube" href="#"><img src="assets/images/icons/youtube.png"><span>undeclared</span></a>
+            <a class="linkedin" href="http://www.linkedin.com/in/kcrmccoy/"><img
+                    src="assets/images/icons/linkedin.png"><span>linkedin.com/in/kcrmccoy</span></a>
+        </div>
+        <div class="bottom">Copyright Casey McCoy 2019. LEGO® is a trademark of the LEGO Group which does not sponsor,
+            authorize or endorse this site. Website design by David Starr.</div>
+    </footer>
+    <script src="assets/js/index.js" async defer></script>
+</body>
+
 </html>
